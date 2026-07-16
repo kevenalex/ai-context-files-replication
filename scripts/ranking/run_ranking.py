@@ -7,10 +7,10 @@ from scripts.ranking.ranking import rank_repositories
 # ===========================
 
 # Caminho dos dados (Pasta input-data dentro do repositório)
-INPUT_FILE = "data/input_data/06-16-2026-seart_data_raw.json"
+INPUT_FILE = "data/newData/input_data/06-16-2026-seart_data_raw.json"
 
 # Pasta de destino para os resultados
-OUTPUT_FOLDER = "data/analysis_data"
+OUTPUT_FOLDER = "data/newData/rq01/output_rankings"
 
 # Parâmetros do Ranking
 WEIGHTS_POP = {"stargazers": 0.25, "contributors": 0.50, "watchers": 0.25}

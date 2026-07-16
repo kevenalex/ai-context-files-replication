@@ -1,0 +1,100 @@
+## Commands
+
+Always use the following environment variables for all `build/copyq` and
+`build/copyq-tests` commands:
+
+    export COPYQ_SESSION_NAME="test"
+    export COPYQ_SETTINGS_PATH="build/copyq-test-conf"
+    export COPYQ_ITEM_DATA_PATH="build/copyq-test-data"
+    export COPYQ_PLUGINS=""
+    export COPYQ_DEFAULT_ICON="1"
+    export COPYQ_SESSION_COLOR="#f90"
+    export COPYQ_THEME_PREFIX="$PWD/shared/themes"
+    export COPYQ_PASSWORD="TEST123"
+    export COPYQ_LOG_LEVEL="DEBUG"
+    export QT_LOGGING_RULES="*.debug=true;qt.*.debug=false"
+    export QT_QPA_PLATFORM="xcb"
+
+Run CMake to configure build:
+
+    cmake -B build -G Ninja \
+      -DCMAKE_BUILD_TYPE=Debug \
+      -DCMAKE_EXPORT_COMPILE_COMMANDS=1 \
+      -DCMAKE_INSTALL_PREFIX=$PWD/build/install \
+      -DCMAKE_CXX_FLAGS="-ggdb -fdiagnostics-color" \
+      -DWITH_TESTS=ON \
+      -DPEDANTIC=ON .
+
+Build: `cmake -B build --build`
+
+Install: `cmake -B build --target install`
+
+Tests and the app require a running X11 or Wayland session with a window
+manager. **You MUST start Xvfb and openbox (or a Wayland compositor) before
+running any `build/copyq` or `build/copyq-tests` command**, otherwise the
+process will crash (exit code 134 or SIGSEGV). X11 setup (once per session):
+
+    Xvfb :99 -screen 0 1280x1024x24 &
+    sleep 1
+    export DISPLAY=:99
+    openbox &
+    sleep 1
+
+Then export `DISPLAY=:99` alongside the other environment variables for every
+command. For Wayland, start a compositor and set `QT_QPA_PLATFORM=wayland`
+instead of `xcb`.
+
+Avoid running all tests, always specify a list of test functions to run.
+
+Run tests after build: `build/copyq-tests $TEST_FUNCTIONS`
+
+Run a specific test by group and tag: `build/copyq-tests "testCore:configPath"`
+
+Run all tests for a plugin group: `build/copyq-tests testItemSync`
+
+List test group names: `build/copyq-tests -functions`
+
+List all individual test methods: `build/copyq-tests -datatags`
+
+Filter tests by name substring: `COPYQ_TESTS_FILTER=clipboard build/copyq-tests`
+
+Start the server process: `build/copyq`
+
+In case any process exits with exit code 11 (SIGSEGV) use `coredumpctl` utility
+to find the root cause.
+
+Stop the server process: `build/copyq exit`
+
+List server and client logs (server process does not need to run): `build/copyq logs`
+
+Run a script - requires server to be running:
+
+    build/copyq source script.js
+
+    # the above command is equivalent to
+    build/copyq 'source("script.js")'
+
+Scripting API documentation is in @docs/scripting-api.rst. After changing it,
+run @utils/script_docs_to_cpp.py to update the completion popup in the GUI.
+
+Useful scripts (omit the `tab(...)` call to use the default tab):
+
+- `tab('TAB1'); add('ITEM')` - prepend ITEM text item to the TAB1 tab
+- `tab('TAB1'); size()` - item count in the TAB1 tab
+- `tab('TAB1'); read(0,1,2)` - read items at indexes 0, 1 and 2 in the TAB1 tab
+- `config()` - list configuration options with current value and description
+- `config('check_clipboard', 'false')` - set an option
+
+## Project structure
+
+- @plugins - code for various plugins build as dynamic modules loaded optionally by the app
+- @src - main app code
+- @src/app - wrappers for QCoreApplication object
+- @src/common - common functionality, client/server local socket handling, logging
+- @src/gui - GUI widgets and some helper modules
+- @src/item - tab and item data handling, serialization code
+- @src/platform - platform-specific code
+- @src/scriptable - scripting capabilities
+- @src/tests - tests for the main app
+- @src/ui - Qt widget definition files (XML)
+- @qxt - code to handle global system-wide shortcuts

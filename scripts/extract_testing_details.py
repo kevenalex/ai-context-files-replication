@@ -130,8 +130,8 @@ def run_testing_extraction(classified_csv, output_json, github_token):
     print(f"--- Sucesso! Detalhes salvos em: {output_json} ---")
 
 if __name__ == "__main__":
-    INPUT = "data/content_analysis/structure_analysis_classified.csv"
-    OUTPUT = "data/testing_analysis/testing_validity_data.json"
+    INPUT = "data/oldData/rq01/structure_analysis_classified.csv"
+    OUTPUT = "data/oldData/misc/testing_analysis/testing_validity_data.json"
     TOKEN = os.getenv("GITHUB_TOKEN")
     
     run_testing_extraction(INPUT, OUTPUT, TOKEN)

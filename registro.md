@@ -43,14 +43,14 @@ O diretório `scripts-referencia/` é dedicado ao armazenamento de materiais ext
 - **Organização de Questões de Pesquisa (RQs):** Cada nova questão de pesquisa deve possuir sua própria pasta em `notebooks/research_questions/RQ_NAME/`. Esta pasta deve conter obrigatoriamente:
     - `README.md`: Documentando o contexto, objetivos específicos e instruções para o agente conduzir aquela pesquisa.
     - `notebook.ipynb`: O arquivo de execução e análise daquela RQ.
-- **Gerenciamento de Dados:** Todos os dados gerados ou consumidos devem estar na pasta `data/`, organizados por subpastas (ex: `data/context_detection/`). Nunca utilize pastas temporárias ou de saída na raiz.
+- **Gerenciamento de Dados:** Todos os dados gerados ou consumidos devem estar na pasta `data/`, sempre dentro de `oldData/` ou `newData/` conforme a coleta, organizados por sub-pasta de RQ (ex: `data/oldData/rq01/`). Nunca utilize pastas temporárias ou de saída na raiz.
 - **Modo de Operação:** Ao modificar scripts de execução (`run_*.py`), mantenha a estrutura de variáveis clara para facilitar a replicabilidade.
 - **Segurança:** Nunca exponha o `GITHUB_TOKEN`. Sempre verifique se o `.env` está no `.gitignore`.
 - **Tratamento de Dados:** Use Pandas para manipulação de grandes volumes de dados. Garanta que os caminhos de entrada e saída nos scripts de execução estejam corretos antes de rodar.
 - **Estilo de Resposta:** Seja prescritivo e direto. Ao sugerir mudanças, foque na eficiência do processamento de dados.
 
 ## Segurança e Eficiência de Tokens (Efficiency & Safety)
-- **Arquivos Massivos:** Arquivos JSON no diretório `data/seart_data/` superam 300MB. 
+- **Arquivos Massivos:** Arquivos JSON em `data/oldData/input_data/` e `data/newData/input_data/` superam 300MB. 
    - **REGRA DE OURO:** NUNCA peça para a IA ler o arquivo completo (`read_file`). Isso causará erro de limite de tokens e desperdício de processamento.
    - **COMO AGIR:** Utilize sempre amostragem (ex: `load_sample_json`) ou inspeção de metadados (`head`, `tail`, `grep`).
 - **Contexto de Conversa:** Para evitar o estouro da janela de contexto da IA, prefira processar dados e gerar resumos (CSVs menores) em vez de manter grandes estruturas de dados na memória do agente.

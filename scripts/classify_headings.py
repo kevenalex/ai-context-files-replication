@@ -3,8 +3,8 @@ import re
 import os
 
 # Caminhos de arquivos
-INPUT_FILE = "data/content_analysis/structure_analysis.csv"
-OUTPUT_FILE = "data/content_analysis/structure_analysis_classified.csv"
+INPUT_FILE = "data/oldData/rq01/structure_analysis.csv"
+OUTPUT_FILE = "data/oldData/rq01/structure_analysis_classified.csv"
 
 # Taxonomia expandida baseada no material de referência "Context Engineering for AI Agents"
 # A ordem importa: categorias mais específicas devem vir antes das gerais.

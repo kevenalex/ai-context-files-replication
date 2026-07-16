@@ -108,8 +108,8 @@ def run_structure_extraction(input_csv, output_csv, github_token, sample_size=No
 
 if __name__ == "__main__":
     # Configuração solicitada: Top 1000 de 23-03-2026
-    INPUT = "data/context_detection/context_api_top1000_23-03-2026.csv"
-    OUTPUT = "data/content_analysis/structure_analysis.csv"
+    INPUT = "data/oldData/rq01/ai_context_files_in_repositories/context_api_top1000_23-03-2026.csv"
+    OUTPUT = "data/oldData/rq01/structure_analysis.csv"
     TOKEN = os.getenv("GITHUB_TOKEN")
     
     run_structure_extraction(INPUT, OUTPUT, TOKEN)

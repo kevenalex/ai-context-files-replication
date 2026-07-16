@@ -1,0 +1,281 @@
+# FilterLists AI Coding Instructions
+
+## Architecture Overview
+
+FilterLists is a dual-stack application that serves as a comprehensive directory of filter and host lists for blocking advertisements, trackers, and malware:
+
+- **Backend**: .NET 9 Aspire application with clean architecture (Application/Infrastructure/API layers)
+- **Frontend**: React + TypeScript SPA with Ant Design UI components
+- **Database**: SQL Server with Entity Framework Core for data persistence
+- **Deployment**: Containerized API on Azure, Static Web App frontend
+
+## Project Structure
+
+```
+services/                    # .NET backend solution
+├── FilterLists.AppHost/     # .NET Aspire orchestrator (main entry point)
+├── Directory/               # Core domain logic
+│   ├── FilterLists.Directory.Api/          # Minimal API endpoints
+│   ├── FilterLists.Directory.Application/  # Query handlers (no MediatR)
+│   ├── FilterLists.Directory.Infrastructure/ # EF Core, DbContext
+│   └── data/                # JSON seed data files
+web/                         # React frontend
+infra/cloudflare-workers/    # CDN edge workers
+```
+
+## Core Architecture Patterns
+
+### Data-Driven Design
+- **JSON-First**: All domain data lives in JSON files under `services/Directory/data/`
+- **Checked-In Migrations**: JSON changes must be followed by a checked-in EF Core migration
+- **Read-Only Runtime**: `QueryDbContext` throws on save operations - data changes only via migrations
+
+### Query Pattern (No CQRS/MediatR)
+```csharp
+public static class GetLists
+{
+    public class Query(QueryDbContext ctx)
+    {
+        public async Task<List<Response>> ExecuteAsync(CancellationToken ct) =>
+            await ctx.FilterLists.Select(f => new Response(...)).ToListAsync(ct);
+    }
+    public sealed record Response(...);
+}
+```
+
+## Development Workflows
+
+### Local Development
+
+```bash
+# Start with .NET Aspire (includes SQL Server container)
+cd services/FilterLists.AppHost
+dotnet run
+
+# Frontend development server
+cd web
+npm start
+```
+
+### Data Changes
+
+1. Edit JSON files in `services/Directory/data/`
+2. Run `./lint.sh` to sort/format JSON consistently
+3. **⚠️ ALWAYS REQUIRED**: Generate migration: `dotnet ef migrations add <Name> -p FilterLists.Directory.Infrastructure.Migrations -s FilterLists.Directory.Api`
+4. Migration auto-applies on startup via `MigrationService`
+
+**Note**: EF Core migrations are REQUIRED for ALL data changes. The database schema is managed by migrations, not by the JSON files alone. Forgetting this step will result in data inconsistencies between the JSON seed data and the database.
+
+### Adding EF Migrations
+
+Always run from `services/Directory/` with these specific parameters:
+
+```bash
+dotnet ef migrations add <MigrationName> -p FilterLists.Directory.Infrastructure.Migrations -s FilterLists.Directory.Api
+```
+
+### GitHub Copilot Cloud Agent
+
+- `AGENTS.md` defines the automatic workflow for issues labeled `directory-data`.
+- `.github/instructions/directory-data.instructions.md` carries file-scoped rules for JSON data files and EF migrations.
+
+## Data Change Requests via GitHub Issues
+
+When assigned to GitHub Issues requesting data updates, follow this comprehensive approach:
+
+### Issue Analysis & Research
+
+1. **Parse the request**: Identify specific changes mentioned in the issue
+2. **Research thoroughly**: Use web search to gather comprehensive information about the filter list(s)
+3. **Consult documentation**: Reference the FilterLists wiki for all supported properties: https://github.com/collinbarrett/FilterLists/wiki
+
+### Data Model Population Strategy
+
+**Objective**: Fill out as much of the data model as possible, not just the minimum requested changes.
+
+**Research Sources**:
+
+- Filter list's official website/repository
+- GitHub repository metadata (if applicable)
+- Documentation and README files
+- License files and terms of service
+- Maintainer information and contact details
+
+**Key Properties to Research**:
+
+- **Basic Info**: Name, description, home page URL
+- **Technical Details**: Syntax type, view URLs, download URLs
+- **Relationships**: Maintainers, languages, tags, licenses
+- **Dependencies**: Upstream forks, merges, software compatibility
+- **Metadata**: Publication date, update frequency, target audience
+
+### Implementation Process
+
+1. **JSON Updates**: Modify relevant files in `services/Directory/data/`
+2. **Relationship Mapping**: Update junction tables (FilterListMaintainer, FilterListTag, etc.)
+3. **Data Validation**: Ensure unique names (title case), valid relationships
+4. **⚠️ REQUIRED: EF Migration Generation**: After ANY data changes, always generate an EF Core migration to capture the changes in the database schema
+5. **Testing**: Verify changes don't break existing functionality
+6. **Dead lists**: If current upstream research shows a filter list is fully dead and all published URLs are gone, remove the dead `FilterList` entries and dependent seed data instead of keeping discontinued placeholders
+
+### Quality Standards
+
+- **Completeness**: Research and populate all discoverable properties
+- **Accuracy**: Verify information from authoritative sources
+- **Consistency**: Follow existing naming conventions and data patterns
+- **Documentation**: Provide clear commit messages explaining changes
+
+## Domain Model Key Relationships
+
+- **FilterList**: Core entity with many-to-many relationships via junction tables
+- **Maintainer**: People/orgs who maintain filter lists
+- **License**: Legal permissions for filter list usage
+- **Syntax**: Technical format (Adblock Plus, hosts file, etc.)
+- **Language**: Target languages for localized lists
+- **Tag**: Categorization (ads, trackers, malware, etc.)
+
+Complex relationships: Fork (upstream/downstream), Merge (includes/included), Dependent (dependencies).
+
+### FilterListViewUrl Usage Guidelines
+
+**Multiple FilterListViewUrls for a single FilterList are intended ONLY for**:
+- **Mirrors**: Multiple hosting locations of the identical list content
+- **Multiple Parts**: When the same list is broken into separate files/parts
+
+**Different "flavors" or variants of a list should get separate FilterList entries**:
+- Each variant/template should be its own FilterList entity
+- Each FilterList should have a single primary ViewUrl (primariness: 1)
+- Examples: Main template vs Gaming template vs Mobile template
+
+**Reference**: https://github.com/collinbarrett/FilterLists/wiki/FilterListViewUrl
+
+## API Conventions
+
+### Minimal API Endpoints
+
+- Endpoints defined in `FilterLists.Directory.Api/Endpoints.cs`
+- Output caching with 1-day expiration for all GET endpoints
+- OpenAPI documentation with detailed examples
+- CORS enabled for web frontend consumption
+
+### Response Patterns
+
+All endpoints return strongly-typed records with XML documentation examples:
+
+```csharp
+/// <param name="Id" example="301">The identifier.</param>
+public sealed record Response(int Id, string Name, ...);
+```
+
+## Build & Deployment
+
+### GitHub Actions
+
+- **Directory API**: Builds Docker image, deploys to Azure Container Registry
+- **Web Frontend**: Builds static assets, deploys to Azure Static Web Apps
+- **Path-based triggers**: Only builds when relevant files change
+
+### Docker Configuration
+
+API containerized with multi-stage build. Database runs in Docker volume with persistent storage (configure password via user secrets).
+
+## React Frontend Specifics
+
+### Tech Stack
+
+- React 19 + TypeScript
+- Ant Design 4.x components
+- React Router 5.x (class-based routing)
+- Custom proxy configuration for API calls
+
+### Component Patterns
+
+- Functional components with hooks
+- Props interfaces defined inline or in `interfaces/` folder
+- Ant Design `Table` component for main list display
+- Tag clouds for maintainers, languages, syntaxes
+
+## Data Model Field Requirements & Constraints
+
+### FilterList.json Field Constraints
+- **id**: Required, unique integer primary key
+- **name**: Required, unique, max 256 characters, title case formatting required
+- **description**: Optional, text description of the filter list
+- **homeUrl**: Optional, max 512 characters, main project website
+- **onionUrl**: Optional, max 512 characters, Tor hidden service URL
+- **policyUrl**: Optional, max 512 characters, privacy/usage policy
+- **submissionUrl**: Optional, max 512 characters, URL for submitting issues/reports
+- **issuesUrl**: Optional, max 512 characters, issue tracker URL
+- **forumUrl**: Optional, max 512 characters, discussion forum URL
+- **chatUrl**: Optional, max 512 characters, chat/IRC/Discord URL
+- **emailAddress**: Optional, max 256 characters, contact email
+- **donateUrl**: Optional, max 512 characters, donation/support URL
+- **licenseId**: Required, foreign key to License.json, defaults to 5 if not specified
+
+### FilterListViewUrl.json Field Constraints
+- **id**: Required, unique integer primary key
+- **filterListId**: Required, foreign key to FilterList.json
+- **url**: Required, max 512 characters, actual download URL for the list
+- **segmentNumber**: Optional, defaults to 1, for multi-part lists
+- **primariness**: Optional, defaults to 1, lower numbers = higher priority mirrors
+- **Unique constraint**: (filterListId, segmentNumber, primariness) must be unique
+
+### Maintainer.json Field Constraints
+- **id**: Required, unique integer primary key
+- **name**: Required, unique, max 64 characters
+- **url**: Optional, max 512 characters, maintainer's website/profile
+- **emailAddress**: Optional, max 256 characters, contact email
+- **twitterHandle**: Optional, max 32 characters, Twitter username without @
+
+### License.json Field Constraints
+- **id**: Required, unique integer primary key
+- **name**: Required, unique, max 64 characters
+- **url**: Optional, max 512 characters, license text URL
+- **permitsModification**: Required boolean, defaults to false
+- **permitsDistribution**: Required boolean, defaults to false
+- **permitsCommercialUse**: Required boolean, defaults to false
+
+### Language.json Field Constraints
+- **id**: Required, unique integer primary key
+- **iso6391**: Required, unique, exactly 2 characters, ISO 639-1 language code
+- **name**: Required, unique, max 64 characters, language name in English
+
+### Tag.json Field Constraints
+- **id**: Required, unique integer primary key
+- **name**: Required, unique, max 32 characters
+- **description**: Optional, text description of the tag's purpose
+
+### Syntax.json Field Constraints
+- **id**: Required, unique integer primary key
+- **name**: Required, unique, max 64 characters
+- **url**: Optional, max 512 characters, documentation/specification URL
+
+### Software.json Field Constraints
+- **id**: Required, unique integer primary key
+- **name**: Required, unique, max 64 characters
+- **homeUrl**: Optional, max 512 characters, software's main website
+- **downloadUrl**: Optional, max 512 characters, download page URL
+- **supportsAbpUrlScheme**: Required boolean, defaults to false
+
+### Junction Table Requirements
+- **FilterListMaintainer.json**: Requires valid filterListId and maintainerId
+- **FilterListLanguage.json**: Requires valid filterListId and languageId
+- **FilterListTag.json**: Requires valid filterListId and tagId
+- **FilterListSyntax.json**: Requires valid filterListId and syntaxId
+- **Fork.json**: Requires valid upstreamFilterListId and forkFilterListId
+- **Merge.json**: Requires valid includesFilterListId and includedInFilterListId
+- **Dependent.json**: Requires valid dependencyFilterListId and dependentFilterListId
+
+## Critical Notes
+
+- **No MediatR**: Use direct query pattern instead
+- **JSON-first**: All data changes start with JSON edits, not EF model changes
+- **Read-only runtime**: Database modifications only via migrations
+- **Aspire orchestration**: Always start development via `FilterLists.AppHost`
+- **Unique naming**: All FilterList names must be unique and in title case
+- **⚠️ FilterList Name Uniqueness**: The database has a unique constraint on FilterList.Name. Any duplicate names will cause migration failures. When adding new FilterLists or modifying existing ones, ensure all names are unique. If differentiation is needed for similar lists (e.g., different hosting sources), use descriptive suffixes like "(GitHub Only)", "(GitHub Pages Primary)", etc.
+- **⚠️ FilterListViewUrl Unique Constraint**: The database has a unique constraint on (FilterListId, SegmentNumber, Primariness) in the FilterListViewUrl table. When adding multiple ViewUrls for the same FilterList, ensure that the combination of segmentNumber (defaults to 1) and primariness (defaults to 1) is unique for each FilterListId. Duplicate combinations will cause migration failures during database seeding.
+- **⚠️ Required Foreign Keys**: All foreign key references (licenseId, maintainerId, etc.) must exist in their respective tables
+- **⚠️ URL Field Validation**: All URL fields are validated as proper URIs and must include protocol (http/https)
+- **No build artifacts**: Never commit build artifacts like `dotnet-install.sh`, `node_modules`, `dist`, or other generated files
+- **⚠️ JSON File Location**: NEVER create or modify JSON data files in the repository root directory. All JSON data files MUST be in `services/Directory/data/` only. The root directory should only contain `global.json` (a .NET SDK configuration file)

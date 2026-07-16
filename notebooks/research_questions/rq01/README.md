@@ -13,11 +13,11 @@ Repositórios com múltiplos arquivos de contexto de IA apresentam alta redundâ
 4. **Analisar Esforço de Manutenção:** Discutir como a falta de padrões (ex: AGENTS.md, CLAUDE.md, GEMINI.md) impacta a evolução do projeto.
 
 ## Instruções para o Agente
-- Utilize os dados de saída de `data/context_detection/` como base inicial.
+- Utilize os dados de saída de `data/oldData/rq01/ai_context_files_in_repositories/` como base inicial.
 - Foque na extração de amostras de conteúdo para comparação qualitativa.
 - Documente cada descoberta relevante no notebook desta pasta.
 
 ## Referências
-- `data/context_detection/context_api_top10000_24-08-2025_20260507_070457.csv` (Base de detecção principal)
-- `data/content_analysis/semantic_analysis_rq01.csv` (Resultados da análise via LLM)
+- `data/oldData/rq01/ai_context_files_in_repositories/context_api_top10000_24-08-2025_20260507_070457.csv` (Base de detecção principal)
+- `data/oldData/rq02/semantic_analysis_rq01.csv` (Resultados da análise via LLM)
 - `notebooks/3-context-ai-repo-study.ipynb` (Análise preliminar de adesão)

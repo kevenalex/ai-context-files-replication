@@ -121,8 +121,6 @@ Para evitar bloqueios por excesso de acessos na API do GitHub, você deve:
 
 Além do código e dos dados processados neste repositório, os dados brutos do SEART e a planilha de revisão manual da RQ2 (mantida à parte, fora do controle de versão) estão publicados no Zenodo, sob o DOI [10.5281/zenodo.21388606](https://doi.org/10.5281/zenodo.21388606).
 
-> **Acesso:** o registro no Zenodo é público, mas o acesso aos arquivos é **privado por decisão do autor**. Caso o acesso seja necessário, ele deve ser solicitado diretamente pela página do depósito no Zenodo.
-
 ## Como Citar
 
 Este repositório é licenciado sob os termos do arquivo [`LICENSE`](./LICENSE) (MIT). Para citar este trabalho, utilize as informações do arquivo [`CITATION.cff`](./CITATION.cff) ou a referência abaixo:

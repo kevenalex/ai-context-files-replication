@@ -6,7 +6,7 @@
 ├── results/              -> (Tabelas geradas, gráficos e saídas numéricas)
 ├── doc/                  -> (Manuscritos, relatórios e cadernos de laboratório)
 ├── LICENSE               -> (Termos de uso do código e dados)
-├── CITATION              -> (Como referenciar o repositório)
+├── CITATION.cff          -> (Como referenciar o repositório)
 └── README.md             -> (Documentação principal do repositório)
 
 Checklist:
@@ -17,6 +17,6 @@ Checklist:
 [ ] - /scripts
 [ ] - /results
 [ ] - /doc
-[ ] - LICENSE
-[ ] - CITATION
+[ X ] - LICENSE
+[ X ] - CITATION.cff
 [ ] - README.md

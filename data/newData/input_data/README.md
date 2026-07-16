@@ -20,7 +20,7 @@ Assim como visto na imagem:
 ![Parâmetros SEART](seart_params.png)
 
 ### Notas Adicionais
-Os dados brutos que foram utilizados nesta pesquisa podem ser acessados por este link https://zenodo.org/records/20724387
+Os dados brutos utilizados nesta pesquisa, junto com a planilha de análise manual da RQ2 (mantida à parte deste repositório), estão publicados no Zenodo: [10.5281/zenodo.21388606](https://doi.org/10.5281/zenodo.21388606). O acesso aos arquivos é privado por decisão do autor; caso seja necessário, deve ser solicitado diretamente pela página do depósito.
 
 ## Dados Brutos - SEART
 

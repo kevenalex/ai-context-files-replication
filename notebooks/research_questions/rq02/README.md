@@ -1,6 +1,6 @@
-# RQ01: Sobreposição Lexical e Semântica em Múltiplos Arquivos de Contexto de IA
+# RQ02: Sobreposição Lexical e Semântica em Múltiplos Arquivos de Contexto de IA
 
-## Questão de Pesquisa (RQ1)
+## Questão de Pesquisa (RQ2)
 Qual é o grau de sobreposição lexical e semântica de diretrizes em repositórios de código aberto que mantêm múltiplos arquivos de contexto para diferentes agentes de IA?
 
 ## Hipótese (H1)

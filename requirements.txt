@@ -5,3 +5,4 @@ python-dotenv==1.2.2
 matplotlib==3.10.9
 seaborn==0.13.2
 jupyter==1.1.1
+google-genai==1.75.0

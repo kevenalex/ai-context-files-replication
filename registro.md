@@ -28,8 +28,8 @@ O diretório `scripts-referencia/` é dedicado ao armazenamento de materiais ext
 
 ### Em Andamento (In Progress)
 - **Aumento de Amostragem:** Transição de testes com 100 repositórios para o Top 10.000.
-- **RQ01 - Padrões de Múltiplos Arquivos:** Estudo sobre projetos com 2+ arquivos de contexto.
-  - Path: `notebooks/research_questions/rq01/`
+- **RQ02 - Padrões de Múltiplos Arquivos:** Estudo sobre projetos com 2+ arquivos de contexto.
+  - Path: `notebooks/research_questions/rq02/`
 
 ### Próximos Passos (To Do / Roadmap)
 1. **Análise de Evolução Histórica (RQ3):**

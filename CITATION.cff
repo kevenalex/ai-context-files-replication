@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "Se você utilizar este repositório, os dados ou os resultados desta pesquisa, por favor cite conforme abaixo."
+title: "Engenharia de Contexto para Agentes de IA: Adoção, Sobreposição e Estrutura de Arquivos de Contexto em Repositórios de Código Aberto"
+type: software
+authors:
+  - family-names: "Barbosa Santos"
+    given-names: "Keven Alex"
+    affiliation: "Universidade Federal de Campina Grande"
+date-released: 2026-07-16
+doi: 10.5281/zenodo.21388606
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.21388606
+    description: "DOI do repositório de reprodução (Kit de Reprodução)"
+repository-code: "https://github.com/kevenalex/tcc"
+license: MIT
+keywords:
+  - "engenharia de contexto"
+  - "agentes de IA"
+  - "AGENTS.md"
+  - "mineração de repositórios"
+  - "engenharia de software"

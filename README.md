@@ -122,4 +122,10 @@ Para evitar bloqueios por excesso de acessos na API do GitHub, você deve:
 1. Criar um arquivo chamado .env na raiz do projeto.
 2. Escrever dentro dele: GITHUB_TOKEN=seu_token_aqui
 
+## Como Citar
+
+Este repositório é licenciado sob os termos do arquivo [`LICENSE`](./LICENSE) (MIT). Para citar este trabalho, utilize as informações do arquivo [`CITATION.cff`](./CITATION.cff) ou a referência abaixo:
+
+> SANTOS, Keven Alex Barbosa. **Engenharia de Contexto para Agentes de IA: Adoção, Sobreposição e Estrutura de Arquivos de Contexto em Repositórios de Código Aberto**. Universidade Federal de Campina Grande, 2026. Disponível em: https://github.com/kevenalex/tcc. DOI: [10.5281/zenodo.21388606](https://doi.org/10.5281/zenodo.21388606).
+
 ---

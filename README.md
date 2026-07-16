@@ -73,12 +73,7 @@ O processo segue estas etapas, em ordem:
      - `scripts/classify_headings.py`: classifica semanticamente cada cabeçalho extraído na mesma taxonomia usada por `regex_analysis_content.py`. **Entrada:** `rq01/structure_analysis.csv`. **Saída:** `rq01/structure_analysis_classified.csv`.
    - **Execução:** cada script é executado diretamente (`python -m scripts.<nome_do_script>`), ajustando as variáveis `INPUT`/`OUTPUT` no bloco `if __name__ == "__main__"`.
 
-5. **Validação de Fidelidade de Testes (Etapa 5, `misc`):**
-   - **Objetivo:** Auditar se as instruções de teste presentes nos arquivos de contexto realmente correspondem ao processo de teste do repositório (checagem de validade, não é uma RQ do artigo).
-   - **Arquivo:** `scripts/extract_testing_details.py`
-   - **Entrada:** `rq01/structure_analysis_classified.csv`. **Saída:** `misc/testing_analysis/testing_validity_data.json`.
-
-6. **Amostragem e Revisão Manual — RQ2 (Etapa 6):**
+5. **Amostragem e Revisão Manual — RQ2 (Etapa 6):**
    - **Objetivo:** Selecionar e preparar uma amostra estatisticamente significativa de repositórios com múltiplos arquivos de contexto para revisão manual de sobreposição lexical/semântica.
    - **Scripts:**
      - `scripts/sample_manual_validation.py`: calcula o tamanho da amostra pela fórmula de Cochran (com correção para população finita) e sorteia os repositórios. **Entrada:** `rq02/semantic_analysis_rq01.csv`. **Saída:** `rq02/sample.csv`.

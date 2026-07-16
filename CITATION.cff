@@ -12,7 +12,7 @@ identifiers:
   - type: doi
     value: 10.5281/zenodo.21388606
     description: "DOI do repositório de reprodução (Kit de Reprodução)"
-repository-code: "https://github.com/kevenalex/tcc"
+repository-code: "https://github.com/kevenalex/ai-contexts-file"
 license: MIT
 keywords:
   - "engenharia de contexto"

@@ -127,6 +127,6 @@ Além do código e dos dados processados neste repositório, os dados brutos do 
 
 Este repositório é licenciado sob os termos do arquivo [`LICENSE`](./LICENSE) (MIT). Para citar este trabalho, utilize as informações do arquivo [`CITATION.cff`](./CITATION.cff) ou a referência abaixo:
 
-> SANTOS, Keven Alex Barbosa. **Engenharia de Contexto para Agentes de IA: Adoção, Sobreposição e Estrutura de Arquivos de Contexto em Repositórios de Código Aberto**. Universidade Federal de Campina Grande, 2026. Disponível em: https://github.com/kevenalex/tcc. DOI: [10.5281/zenodo.21388606](https://doi.org/10.5281/zenodo.21388606).
+> SANTOS, Keven Alex Barbosa. **Engenharia de Contexto para Agentes de IA: Adoção, Sobreposição e Estrutura de Arquivos de Contexto em Repositórios de Código Aberto**. Universidade Federal de Campina Grande, 2026. Disponível em: https://github.com/kevenalex/ai-contexts-file. DOI: [10.5281/zenodo.21388606](https://doi.org/10.5281/zenodo.21388606).
 
 ---

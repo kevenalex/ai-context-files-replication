@@ -24,8 +24,8 @@ A pasta `data/` tem apenas dois diretórios no topo — `oldData/` e `newData/` 
   - `rq00/`: Conteúdo bruto baixado de cada arquivo detectado.
   - `structure_analysis.csv` / `structure_analysis_classified.csv`: Cabeçalhos extraídos e classificados por categoria.
   - `regex_analysis_content_ai_context_files.csv`: Classificação temática por repositório.
-- `rq02/`: Dados da **RQ2** do artigo ("Sobreposição lexical e semântica em múltiplos arquivos de contexto"): `semantic_analysis_rq01.csv` e os artefatos de revisão manual (amostra, planilha cega, checklist por repositório).
-- `misc/`: Dados que não pertencem a nenhuma RQ do artigo (ex.: `testing_analysis/`, estudo de validade dos testes automatizados).
+- `rq02/`: Dados da **RQ2** do artigo ("Sobreposição lexical e semântica em múltiplos arquivos de contexto"): `semantic_analysis_rq01.csv` e os artefatos de revisão manual (amostra, checklist por repositório, etc).
+- `misc/`: Dados que não pertencem a nenhuma RQ do artigo (ex.: `testing_analysis/`).
 
 ## Stack Tecnológica (Tech Stack)
 - **Linguagem:** Python 3.14

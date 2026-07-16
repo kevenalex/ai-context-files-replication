@@ -21,7 +21,7 @@ A pasta `data/` tem apenas dois diretórios no topo — `oldData/` e `newData/` 
 - `rq01/`: Dados da **RQ1** do artigo ("Natureza temática das diretrizes"), incluindo todo o pipeline que a alimenta:
   - `output_rankings/`: Repositórios ranqueados (Etapa 1).
   - `ai_context_files_in_repositories/`: Detecção binária de arquivos de contexto de IA (Etapa 2).
-  - `rq00/`: Conteúdo bruto baixado de cada arquivo detectado, mais o `download_manifest.csv`.
+  - `rq00/`: Conteúdo bruto baixado de cada arquivo detectado.
   - `structure_analysis.csv` / `structure_analysis_classified.csv`: Cabeçalhos extraídos e classificados por categoria.
   - `regex_analysis_content_ai_context_files.csv`: Classificação temática por repositório.
 - `rq02/`: Dados da **RQ2** do artigo ("Sobreposição lexical e semântica em múltiplos arquivos de contexto"): `semantic_analysis_rq01.csv` e os artefatos de revisão manual (amostra, planilha cega, checklist por repositório).

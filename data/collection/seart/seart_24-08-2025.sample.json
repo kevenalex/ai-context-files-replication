@@ -1,0 +1,867 @@
+{
+  "parameters": {
+    "nameEquals": false,
+    "contributorsMin": 2,
+    "createdMax": 1704067200000,
+    "committedMin": 1717200000000,
+    "excludeForks": true,
+    "onlyForks": false,
+    "hasIssues": false,
+    "hasPulls": false,
+    "hasWiki": false,
+    "hasLicense": true
+  },
+  "items": [
+    {
+      "id": 0,
+      "name": "sparklemotion/nokogiri",
+      "isFork": false,
+      "commits": 7848,
+      "branches": 48,
+      "releases": 81,
+      "forks": 913,
+      "mainLanguage": "C",
+      "defaultBranch": "main",
+      "license": "MIT License",
+      "homepage": "https://nokogiri.org/",
+      "watchers": 158,
+      "stargazers": 6184,
+      "contributors": 239,
+      "size": 38452,
+      "createdAt": "2008-07-14T03:34:32",
+      "pushedAt": "2025-03-24T07:41:20",
+      "updatedAt": "2025-03-24T07:41:23",
+      "totalIssues": 2022,
+      "openIssues": 71,
+      "totalPullRequests": 1333,
+      "openPullRequests": 28,
+      "blankLines": 14569,
+      "codeLines": 128235,
+      "commentLines": 15815,
+      "metrics": [
+        {
+          "blankLines": 0,
+          "language": "XHTML",
+          "commentLines": 0,
+          "codeLines": 84
+        },
+        {
+          "blankLines": 9,
+          "language": "XSLT",
+          "commentLines": 0,
+          "codeLines": 58
+        },
+        {
+          "blankLines": 4,
+          "language": "INI",
+          "commentLines": 0,
+          "codeLines": 13
+        },
+        {
+          "blankLines": 4,
+          "language": "sed",
+          "commentLines": 0,
+          "codeLines": 15
+        },
+        {
+          "blankLines": 0,
+          "language": "Text",
+          "commentLines": 0,
+          "codeLines": 2
+        },
+        {
+          "blankLines": 1163,
+          "language": "C++",
+          "commentLines": 297,
+          "codeLines": 7100
+        },
+        {
+          "blankLines": 2590,
+          "language": "Java",
+          "commentLines": 4405,
+          "codeLines": 15305
+        },
+        {
+          "blankLines": 452,
+          "language": "C/C++ Header",
+          "commentLines": 904,
+          "codeLines": 1345
+        },
+        {
+          "blankLines": 29,
+          "language": "make",
+          "commentLines": 8,
+          "codeLines": 128
+        },
+        {
+          "blankLines": 101,
+          "language": "Dockerfile",
+          "commentLines": 68,
+          "codeLines": 113
+        },
+        {
+          "blankLines": 0,
+          "language": "Constraint Grammar",
+          "commentLines": 0,
+          "codeLines": 12
+        },
+        {
+          "blankLines": 15,
+          "language": "Bourne Shell",
+          "commentLines": 4,
+          "codeLines": 57
+        },
+        {
+          "blankLines": 7,
+          "language": "Oracle Reports",
+          "commentLines": 0,
+          "codeLines": 50
+        },
+        {
+          "blankLines": 3,
+          "language": "CSS",
+          "commentLines": 0,
+          "codeLines": 25
+        },
+        {
+          "blankLines": 124,
+          "language": "HTML",
+          "commentLines": 119,
+          "codeLines": 810
+        },
+        {
+          "blankLines": 52,
+          "language": "Bourne Again Shell",
+          "commentLines": 33,
+          "codeLines": 157
+        },
+        {
+          "blankLines": 82,
+          "language": "XSD",
+          "commentLines": 41,
+          "codeLines": 1000
+        },
+        {
+          "blankLines": 33,
+          "language": "Yacc",
+          "commentLines": 0,
+          "codeLines": 244
+        },
+        {
+          "blankLines": 19,
+          "language": "ERB",
+          "commentLines": 0,
+          "codeLines": 38
+        },
+        {
+          "blankLines": 5166,
+          "language": "Ruby",
+          "commentLines": 6045,
+          "codeLines": 28852
+        },
+        {
+          "blankLines": 93,
+          "language": "YAML",
+          "commentLines": 150,
+          "codeLines": 1448
+        },
+        {
+          "blankLines": 2165,
+          "language": "Markdown",
+          "commentLines": 108,
+          "codeLines": 4520
+        },
+        {
+          "blankLines": 9,
+          "language": "XML",
+          "commentLines": 1,
+          "codeLines": 27665
+        },
+        {
+          "blankLines": 56,
+          "language": "Diff",
+          "commentLines": 311,
+          "codeLines": 516
+        },
+        {
+          "blankLines": 0,
+          "language": "DTD",
+          "commentLines": 0,
+          "codeLines": 14
+        },
+        {
+          "blankLines": 2393,
+          "language": "C",
+          "commentLines": 3321,
+          "codeLines": 38664
+        }
+      ],
+      "lastCommit": "2025-03-24T07:37:19",
+      "lastCommitSHA": "b30f37565f674b0c23c96a59e1bc87b96b89e0c0",
+      "hasWiki": true,
+      "isArchived": false,
+      "isDisabled": false,
+      "isLocked": false,
+      "languages": {
+        "C": 1480966,
+        "Ruby": 1306262,
+        "Java": 662277,
+        "C++": 273316,
+        "HTML": 97468,
+        "Ragel": 97111,
+        "Shell": 7624,
+        "Dockerfile": 6918,
+        "Yacc": 6793,
+        "Makefile": 5853,
+        "REXX": 1965,
+        "XSLT": 1868,
+        "CSS": 422,
+        "sed": 354
+      },
+      "labels": [
+        "backport",
+        "blocked",
+        "dependencies",
+        "event/hackday2024",
+        "github_actions",
+        "help wanted",
+        "meta/discussion",
+        "meta/duplicate",
+        "meta/feature-request",
+        "meta/invalid",
+        "meta/spam",
+        "meta/troll",
+        "meta/user-help",
+        "needs/breakdown",
+        "needs/fix-for-failing-test",
+        "needs/more-info",
+        "needs/research",
+        "packaging/compile-from-source",
+        "packaging/native-gem",
+        "platform/aix",
+        "platform/jruby",
+        "platform/openbsd",
+        "platform/osx",
+        "platform/truffleruby",
+        "platform/windows",
+        "release-blocker",
+        "ruby",
+        "state/in-progress",
+        "state/needs-triage",
+        "state/pr-merged-manually",
+        "state/pr-under-review",
+        "state/pr-will-merge",
+        "state/pr-will-not-merge",
+        "state/will-close",
+        "topic/builder",
+        "topic/ci",
+        "topic/css",
+        "topic/documentation",
+        "topic/dtd",
+        "topic/encoding",
+        "topic/entities",
+        "topic/error-handling",
+        "topic/fixing-broken-markup",
+        "topic/fragment",
+        "topic/gumbo",
+        "topic/html5",
+        "topic/installation",
+        "topic/libxml-ruby",
+        "topic/license",
+        "topic/memory",
+        "topic/namespaces",
+        "topic/performance",
+        "topic/reader",
+        "topic/rfc",
+        "topic/sax",
+        "topic/security",
+        "topic/xhtml",
+        "topic/xsd",
+        "upstream/libxml2",
+        "upstream/libxslt",
+        "vendored/iconv",
+        "vendored/libxml2",
+        "vendored/libxslt",
+        "vendored/nekohtml",
+        "vendored/xerces",
+        "vendored/zlib"
+      ],
+      "topics": [
+        "libxml2",
+        "libxslt",
+        "nokogiri",
+        "ruby",
+        "ruby-gem",
+        "sax",
+        "xerces",
+        "xml",
+        "xslt"
+      ]
+    },
+    {
+      "id": 61,
+      "name": "davidb/scala-maven-plugin",
+      "isFork": false,
+      "commits": 1186,
+      "branches": 3,
+      "releases": 0,
+      "forks": 155,
+      "mainLanguage": "Java",
+      "defaultBranch": "master",
+      "license": "The Unlicense",
+      "homepage": "https://davidb.github.io/scala-maven-plugin/",
+      "watchers": 23,
+      "stargazers": 565,
+      "contributors": 61,
+      "size": 7320,
+      "createdAt": "2008-05-31T09:02:12",
+      "pushedAt": "2025-03-29T12:00:10",
+      "updatedAt": "2025-03-28T11:56:24",
+      "totalIssues": 298,
+      "openIssues": 8,
+      "totalPullRequests": 539,
+      "openPullRequests": 4,
+      "blankLines": 1203,
+      "codeLines": 10162,
+      "commentLines": 1324,
+      "metrics": [
+        {
+          "blankLines": 0,
+          "language": "Text",
+          "commentLines": 0,
+          "codeLines": 5
+        },
+        {
+          "blankLines": 44,
+          "language": "CSS",
+          "commentLines": 18,
+          "codeLines": 467
+        },
+        {
+          "blankLines": 92,
+          "language": "Groovy",
+          "commentLines": 4,
+          "codeLines": 209
+        },
+        {
+          "blankLines": 0,
+          "language": "TOML",
+          "commentLines": 0,
+          "codeLines": 3
+        },
+        {
+          "blankLines": 0,
+          "language": "SVG",
+          "commentLines": 0,
+          "codeLines": 20
+        },
+        {
+          "blankLines": 2,
+          "language": "Nix",
+          "commentLines": 12,
+          "codeLines": 18
+        },
+        {
+          "blankLines": 32,
+          "language": "DOS Batch",
+          "commentLines": 0,
+          "codeLines": 129
+        },
+        {
+          "blankLines": 1,
+          "language": "INI",
+          "commentLines": 0,
+          "codeLines": 8
+        },
+        {
+          "blankLines": 15,
+          "language": "Scala",
+          "commentLines": 3,
+          "codeLines": 58
+        },
+        {
+          "blankLines": 3,
+          "language": "YAML",
+          "commentLines": 2,
+          "codeLines": 48
+        },
+        {
+          "blankLines": 11,
+          "language": "Markdown",
+          "commentLines": 0,
+          "codeLines": 34
+        },
+        {
+          "blankLines": 0,
+          "language": "Kotlin",
+          "commentLines": 0,
+          "codeLines": 2
+        },
+        {
+          "blankLines": 4,
+          "language": "Properties",
+          "commentLines": 0,
+          "codeLines": 32
+        },
+        {
+          "blankLines": 31,
+          "language": "Bourne Shell",
+          "commentLines": 60,
+          "codeLines": 195
+        },
+        {
+          "blankLines": 809,
+          "language": "Java",
+          "commentLines": 1144,
+          "codeLines": 5018
+        },
+        {
+          "blankLines": 73,
+          "language": "Velocity Template Language",
+          "commentLines": 20,
+          "codeLines": 1358
+        },
+        {
+          "blankLines": 77,
+          "language": "Maven",
+          "commentLines": 58,
+          "codeLines": 2058
+        },
+        {
+          "blankLines": 9,
+          "language": "XML",
+          "commentLines": 3,
+          "codeLines": 500
+        }
+      ],
+      "lastCommit": "2025-03-28T11:56:19",
+      "lastCommitSHA": "30092d81eef553804d42388e1cbad6333ee2ad14",
+      "hasWiki": true,
+      "isArchived": false,
+      "isDisabled": false,
+      "isLocked": false,
+      "languages": {
+        "Java": 226622,
+        "CSS": 8764,
+        "Groovy": 6864,
+        "Scala": 1550,
+        "Nix": 1351,
+        "Kotlin": 25
+      },
+      "labels": [
+        "2.12-release",
+        "2.13-release",
+        "2.14-release",
+        "bug",
+        "dependencies",
+        "duplicate",
+        "feature-request",
+        "fix-later",
+        "github_actions",
+        "help-wanted",
+        "incremental",
+        "java",
+        "scala-2.13"
+      ],
+      "topics": []
+    },
+    {
+      "id": 82,
+      "name": "tcurdt/jdeb",
+      "isFork": false,
+      "commits": 1183,
+      "branches": 2,
+      "releases": 0,
+      "forks": 319,
+      "mainLanguage": "Java",
+      "defaultBranch": "master",
+      "license": "Apache License 2.0",
+      "homepage": "https://github.com/tcurdt/jdeb",
+      "watchers": 29,
+      "stargazers": 534,
+      "contributors": 66,
+      "size": 6129,
+      "createdAt": "2008-10-03T11:46:26",
+      "pushedAt": "2025-02-27T10:26:52",
+      "updatedAt": "2025-02-27T10:26:54",
+      "totalIssues": 220,
+      "openIssues": 24,
+      "totalPullRequests": 566,
+      "openPullRequests": 7,
+      "blankLines": 2048,
+      "codeLines": 8633,
+      "commentLines": 2050,
+      "metrics": [
+        {
+          "blankLines": 1756,
+          "language": "Java",
+          "commentLines": 1979,
+          "codeLines": 6195
+        },
+        {
+          "blankLines": 11,
+          "language": "Ant",
+          "commentLines": 0,
+          "codeLines": 38
+        },
+        {
+          "blankLines": 25,
+          "language": "YAML",
+          "commentLines": 0,
+          "codeLines": 116
+        },
+        {
+          "blankLines": 0,
+          "language": "JSON",
+          "commentLines": 0,
+          "codeLines": 6
+        },
+        {
+          "blankLines": 25,
+          "language": "XML",
+          "commentLines": 1,
+          "codeLines": 474
+        },
+        {
+          "blankLines": 153,
+          "language": "Markdown",
+          "commentLines": 11,
+          "codeLines": 677
+        },
+        {
+          "blankLines": 22,
+          "language": "Bourne Shell",
+          "commentLines": 53,
+          "codeLines": 72
+        },
+        {
+          "blankLines": 34,
+          "language": "Text",
+          "commentLines": 0,
+          "codeLines": 184
+        },
+        {
+          "blankLines": 1,
+          "language": "DOS Batch",
+          "commentLines": 0,
+          "codeLines": 8
+        },
+        {
+          "blankLines": 13,
+          "language": "Maven",
+          "commentLines": 6,
+          "codeLines": 831
+        },
+        {
+          "blankLines": 2,
+          "language": "Groovy",
+          "commentLines": 0,
+          "codeLines": 15
+        },
+        {
+          "blankLines": 6,
+          "language": "PowerShell",
+          "commentLines": 0,
+          "codeLines": 17
+        }
+      ],
+      "lastCommit": "2025-02-27T10:26:49",
+      "lastCommitSHA": "6d96da832f7bc859479420f65eff1b3179d5b793",
+      "hasWiki": false,
+      "isArchived": false,
+      "isDisabled": false,
+      "isLocked": false,
+      "languages": {
+        "Java": 353347,
+        "Shell": 5002,
+        "PowerShell": 885,
+        "Groovy": 877,
+        "Batchfile": 321
+      },
+      "labels": [
+        "bug",
+        "dependencies",
+        "github_actions",
+        "good first issue",
+        "has pr",
+        "improvement",
+        "invalid",
+        "java",
+        "looking for help",
+        "question",
+        "unverified",
+        "waiting for 3rd party release",
+        "waiting for feedback"
+      ],
+      "topics": [
+        "ant-task",
+        "cross-platform",
+        "deb",
+        "debian-packages",
+        "java",
+        "jdeb",
+        "maven-plugin"
+      ]
+    },
+    {
+      "id": 165,
+      "name": "tcurdt/jdependency",
+      "isFork": false,
+      "commits": 600,
+      "branches": 2,
+      "releases": 0,
+      "forks": 26,
+      "mainLanguage": "Java",
+      "defaultBranch": "master",
+      "license": "Apache License 2.0",
+      "homepage": "http://github.com/tcurdt/jdependency",
+      "watchers": 9,
+      "stargazers": 77,
+      "contributors": 17,
+      "size": 6007,
+      "createdAt": "2008-10-05T12:38:39",
+      "pushedAt": "2025-02-28T01:31:08",
+      "updatedAt": "2025-02-28T01:31:11",
+      "totalIssues": 20,
+      "openIssues": 0,
+      "totalPullRequests": 302,
+      "openPullRequests": 0,
+      "blankLines": 522,
+      "codeLines": 2280,
+      "commentLines": 527,
+      "metrics": [
+        {
+          "blankLines": 24,
+          "language": "Maven",
+          "commentLines": 23,
+          "codeLines": 568
+        },
+        {
+          "blankLines": 0,
+          "language": "JSON",
+          "commentLines": 0,
+          "codeLines": 6
+        },
+        {
+          "blankLines": 13,
+          "language": "XML",
+          "commentLines": 31,
+          "codeLines": 74
+        },
+        {
+          "blankLines": 32,
+          "language": "Text",
+          "commentLines": 0,
+          "codeLines": 169
+        },
+        {
+          "blankLines": 25,
+          "language": "YAML",
+          "commentLines": 1,
+          "codeLines": 115
+        },
+        {
+          "blankLines": 88,
+          "language": "Markdown",
+          "commentLines": 0,
+          "codeLines": 168
+        },
+        {
+          "blankLines": 6,
+          "language": "Bourne Shell",
+          "commentLines": 0,
+          "codeLines": 13
+        },
+        {
+          "blankLines": 334,
+          "language": "Java",
+          "commentLines": 472,
+          "codeLines": 1167
+        }
+      ],
+      "lastCommit": "2025-02-28T01:31:07",
+      "lastCommitSHA": "ed12b45b42fe511c1cd5bfbed7a212d653cbb5dc",
+      "hasWiki": false,
+      "isArchived": false,
+      "isDisabled": false,
+      "isLocked": false,
+      "languages": {
+        "Java": 69087,
+        "Shell": 321
+      },
+      "labels": [
+        "bug",
+        "dependencies",
+        "github_actions",
+        "java"
+      ],
+      "topics": [
+        "dependencies",
+        "dependency-analysis",
+        "jarjar",
+        "java",
+        "proguard"
+      ]
+    },
+    {
+      "id": 470,
+      "name": "mongodb/mongo-java-driver",
+      "isFork": false,
+      "commits": 8553,
+      "branches": 44,
+      "releases": 152,
+      "forks": 1487,
+      "mainLanguage": "Java",
+      "defaultBranch": "main",
+      "license": "Apache License 2.0",
+      "homepage": "https://www.mongodb.com/docs/drivers/java/sync/current/",
+      "watchers": 216,
+      "stargazers": 2629,
+      "contributors": 172,
+      "size": 139024,
+      "createdAt": "2009-01-15T03:16:29",
+      "pushedAt": "2025-03-29T12:32:25",
+      "updatedAt": "2025-03-28T08:19:23",
+      "totalIssues": 0,
+      "openIssues": 0,
+      "totalPullRequests": 1661,
+      "openPullRequests": 18,
+      "blankLines": 61050,
+      "codeLines": 617218,
+      "commentLines": 126581,
+      "metrics": [
+        {
+          "blankLines": 21,
+          "language": "DOS Batch",
+          "commentLines": 2,
+          "codeLines": 69
+        },
+        {
+          "blankLines": 4,
+          "language": "JSON",
+          "commentLines": 0,
+          "codeLines": 335099
+        },
+        {
+          "blankLines": 11,
+          "language": "INI",
+          "commentLines": 0,
+          "codeLines": 707
+        },
+        {
+          "blankLines": 38,
+          "language": "Text",
+          "commentLines": 0,
+          "codeLines": 184
+        },
+        {
+          "blankLines": 229,
+          "language": "YAML",
+          "commentLines": 100,
+          "codeLines": 3051
+        },
+        {
+          "blankLines": 11793,
+          "language": "Groovy",
+          "commentLines": 5046,
+          "codeLines": 52182
+        },
+        {
+          "blankLines": 327,
+          "language": "Markdown",
+          "commentLines": 0,
+          "codeLines": 848
+        },
+        {
+          "blankLines": 315,
+          "language": "Bourne Shell",
+          "commentLines": 394,
+          "codeLines": 954
+        },
+        {
+          "blankLines": 115,
+          "language": "XML",
+          "commentLines": 212,
+          "codeLines": 629
+        },
+        {
+          "blankLines": 4863,
+          "language": "Scala",
+          "commentLines": 16286,
+          "codeLines": 15847
+        },
+        {
+          "blankLines": 349,
+          "language": "Gradle",
+          "commentLines": 909,
+          "codeLines": 1616
+        },
+        {
+          "blankLines": 40,
+          "language": "TOML",
+          "commentLines": 19,
+          "codeLines": 186
+        },
+        {
+          "blankLines": 2,
+          "language": "Properties",
+          "commentLines": 61,
+          "codeLines": 27
+        },
+        {
+          "blankLines": 4,
+          "language": "Bourne Again Shell",
+          "commentLines": 3,
+          "codeLines": 12
+        },
+        {
+          "blankLines": 3357,
+          "language": "Kotlin",
+          "commentLines": 10059,
+          "codeLines": 14768
+        },
+        {
+          "blankLines": 38333,
+          "language": "Java",
+          "commentLines": 93166,
+          "codeLines": 188655
+        },
+        {
+          "blankLines": 1249,
+          "language": "reStructuredText",
+          "commentLines": 324,
+          "codeLines": 2384
+        }
+      ],
+      "lastCommit": "2025-03-28T08:19:18",
+      "lastCommitSHA": "e1eb156bf07dd166299c80a54b7eeb7034c83f03",
+      "hasWiki": false,
+      "isArchived": false,
+      "isDisabled": false,
+      "isLocked": false,
+      "languages": {
+        "Java": 12269974,
+        "Groovy": 2660747,
+        "Scala": 1360383,
+        "Kotlin": 1212457,
+        "Shell": 56063
+      },
+      "labels": [
+        "external",
+        "kotlin",
+        "priority: test"
+      ],
+      "topics": [
+        "database",
+        "java",
+        "java-library",
+        "jvm",
+        "kotlin",
+        "kotlin-coroutines",
+        "kotlin-library",
+        "mongodb",
+        "scala"
+      ]
+    }
+  ]
+}

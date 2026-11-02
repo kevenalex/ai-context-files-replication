@@ -1,22 +1,16 @@
 cff-version: 1.2.0
-message: "Se você utilizar este repositório, os dados ou os resultados desta pesquisa, por favor cite conforme abaixo."
-title: "Engenharia de Contexto para Agentes de IA: Adoção, Sobreposição e Estrutura de Arquivos de Contexto em Repositórios de Código Aberto"
+message: "If you use this repository, its data, or the results of this research, please cite it as below."
+title: "AI Context Files in Practice: Adoption, Content, and Conflicts in Open-Source Repositories (replication package)"
 type: software
 authors:
   - family-names: "Barbosa Santos"
     given-names: "Keven Alex"
     affiliation: "Universidade Federal de Campina Grande"
-date-released: 2026-07-16
-doi: 10.5281/zenodo.21388606
-identifiers:
-  - type: doi
-    value: 10.5281/zenodo.21388606
-    description: "DOI do repositório de reprodução (Kit de Reprodução)"
 repository-code: "https://github.com/kevenalex/ai-contexts-file"
 license: MIT
 keywords:
-  - "engenharia de contexto"
-  - "agentes de IA"
+  - "context engineering"
+  - "AI coding agents"
   - "AGENTS.md"
-  - "mineração de repositórios"
-  - "engenharia de software"
+  - "mining software repositories"
+  - "software engineering"

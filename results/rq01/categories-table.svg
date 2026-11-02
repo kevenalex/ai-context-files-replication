@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="502" viewBox="0 0 640 502" font-family="Helvetica, Arial, sans-serif">
+<rect width="100%" height="100%" fill="#fff"/>
+<line x1="16" x2="624" y1="20" y2="20" stroke="#111" stroke-width="1.6"/>
+<text x="24" y="45.0" font-size="14" font-weight="700" fill="#111" text-anchor="start">Category</text>
+<text x="400" y="45.0" font-size="14" font-weight="700" fill="#111" text-anchor="end">Files</text>
+<text x="430" y="45.0" font-size="14" font-weight="700" fill="#111" text-anchor="start">Share (%)</text>
+<line x1="16" x2="624" y1="60" y2="60" stroke="#111" stroke-width="0.9"/>
+<text x="24" y="80.0" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111">test_instructions</text><text x="400" y="80.0" font-size="14" fill="#111" text-anchor="end">1,257</text><rect x="430" y="69.0" width="127.7" height="12" rx="2" fill="#3b6fb6"/><text x="565.7" y="80.0" font-size="14" fill="#111">68.8</text>
+<rect x="16" y="90" width="608" height="30" fill="#f4f6f9"/>
+<text x="24" y="110.0" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111">code_conventions</text><text x="400" y="110.0" font-size="14" fill="#111" text-anchor="end">1,245</text><rect x="430" y="99.0" width="126.5" height="12" rx="2" fill="#3b6fb6"/><text x="564.5" y="110.0" font-size="14" fill="#111">68.1</text>
+<text x="24" y="140.0" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111">run_and_build</text><text x="400" y="140.0" font-size="14" fill="#111" text-anchor="end">1,182</text><rect x="430" y="129.0" width="120.1" height="12" rx="2" fill="#3b6fb6"/><text x="558.1" y="140.0" font-size="14" fill="#111">64.7</text>
+<rect x="16" y="150" width="608" height="30" fill="#f4f6f9"/>
+<text x="24" y="170.0" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111">ai_rules</text><text x="400" y="170.0" font-size="14" fill="#111" text-anchor="end">1,026</text><rect x="430" y="159.0" width="104.2" height="12" rx="2" fill="#3b6fb6"/><text x="542.2" y="170.0" font-size="14" fill="#111">56.1</text>
+<text x="24" y="200.0" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111">project_overview</text><text x="400" y="200.0" font-size="14" fill="#111" text-anchor="end">974</text><rect x="430" y="189.0" width="98.9" height="12" rx="2" fill="#3b6fb6"/><text x="536.9" y="200.0" font-size="14" fill="#111">53.3</text>
+<rect x="16" y="210" width="608" height="30" fill="#f4f6f9"/>
+<text x="24" y="230.0" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111">doc_metadata</text><text x="400" y="230.0" font-size="14" fill="#111" text-anchor="end">937</text><rect x="430" y="219.0" width="95.2" height="12" rx="2" fill="#3b6fb6"/><text x="533.2" y="230.0" font-size="14" fill="#111">51.3</text>
+<text x="24" y="260.0" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111">project_structure</text><text x="400" y="260.0" font-size="14" fill="#111" text-anchor="end">912</text><rect x="430" y="249.0" width="92.6" height="12" rx="2" fill="#3b6fb6"/><text x="530.6" y="260.0" font-size="14" fill="#111">49.9</text>
+<rect x="16" y="270" width="608" height="30" fill="#f4f6f9"/>
+<text x="24" y="290.0" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111">contribution_guidelines</text><text x="400" y="290.0" font-size="14" fill="#111" text-anchor="end">895</text><rect x="430" y="279.0" width="90.9" height="12" rx="2" fill="#3b6fb6"/><text x="528.9" y="290.0" font-size="14" fill="#111">49.0</text>
+<text x="24" y="320.0" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111">system_design</text><text x="400" y="320.0" font-size="14" fill="#111" text-anchor="end">696</text><rect x="430" y="309.0" width="70.7" height="12" rx="2" fill="#3b6fb6"/><text x="508.7" y="320.0" font-size="14" fill="#111">38.1</text>
+<rect x="16" y="330" width="608" height="30" fill="#f4f6f9"/>
+<text x="24" y="350.0" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111">troubleshooting</text><text x="400" y="350.0" font-size="14" fill="#111" text-anchor="end">323</text><rect x="430" y="339.0" width="32.8" height="12" rx="2" fill="#3b6fb6"/><text x="470.8" y="350.0" font-size="14" fill="#111">17.7</text>
+<text x="24" y="380.0" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111">security</text><text x="400" y="380.0" font-size="14" fill="#111" text-anchor="end">314</text><rect x="430" y="369.0" width="31.9" height="12" rx="2" fill="#3b6fb6"/><text x="469.9" y="380.0" font-size="14" fill="#111">17.2</text>
+<rect x="16" y="390" width="608" height="30" fill="#f4f6f9"/>
+<text x="24" y="410.0" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111">deployment_&amp;_infrastructure</text><text x="400" y="410.0" font-size="14" fill="#111" text-anchor="end">198</text><rect x="430" y="399.0" width="20.1" height="12" rx="2" fill="#3b6fb6"/><text x="458.1" y="410.0" font-size="14" fill="#111">10.8</text>
+<text x="24" y="440.0" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111">performance_&amp;_resource_management</text><text x="400" y="440.0" font-size="14" fill="#111" text-anchor="end">195</text><rect x="430" y="429.0" width="19.8" height="12" rx="2" fill="#3b6fb6"/><text x="457.8" y="440.0" font-size="14" fill="#111">10.7</text>
+<line x1="16" x2="624" y1="450" y2="450" stroke="#111" stroke-width="1.6"/>
+<text x="624" y="466" font-size="11" fill="#555" text-anchor="end">N = 1,828 files; multi-label, so shares do not sum to 100%.</text>
+</svg>

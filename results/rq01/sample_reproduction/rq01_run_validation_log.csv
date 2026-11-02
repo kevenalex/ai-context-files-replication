@@ -1,0 +1,5 @@
+lote_inicio,lote_fim,arquivos,modelo,data_hora_utc
+metabase/metabase/CLAUDE.md,scylladb/scylladb/COPILOT,30,claude-sonnet-5-5,2026-11-02T07:20:29Z
+bigbluebutton/bigbluebutton/AGENTS.md,meshtastic/firmware/AGENTS.md,30,claude-sonnet-5-5,2026-11-02T07:25:25Z
+meshtastic/firmware/COPILOT,heroui-inc/heroui/AGENTS.md,30,claude-sonnet-5-5,2026-11-02T07:30:05Z
+heroui-inc/heroui/CLAUDE.md,abh/ntppool/COPILOT,7,claude-sonnet-5-5,2026-11-02T07:32:13Z

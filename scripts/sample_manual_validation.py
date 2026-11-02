@@ -3,14 +3,14 @@ import math
 import pandas as pd
 
 def calculate_sample_size(population_size, confidence_z, margin_error, p=0.5):
-    """Fórmula de Cochran com correção para população finita."""
+    """Cochran's formula with finite population correction."""
     n0 = (confidence_z ** 2 * p * (1 - p)) / (margin_error ** 2)
     n = n0 / (1 + (n0 - 1) / population_size)
     return math.ceil(n)
 
 def run_sample_selection(input_csv, output_csv, confidence_z, margin_error, random_state):
     if not os.path.exists(input_csv):
-        print(f"Erro: Arquivo de entrada {input_csv} não encontrado.")
+        print(f"Error: input file {input_csv} not found.")
         return
 
     df = pd.read_csv(input_csv)
@@ -25,16 +25,16 @@ def run_sample_selection(input_csv, output_csv, confidence_z, margin_error, rand
     os.makedirs(os.path.dirname(output_csv), exist_ok=True)
     df_sample.to_csv(output_csv, index=False)
 
-    print("--- Cálculo da amostra (fórmula de Cochran com correção finita) ---")
-    print(f"População (repositórios únicos): {population_size}")
-    print(f"Confiança (Z): {confidence_z} | Margem de erro: {margin_error * 100:.0f}%")
-    print(f"Tamanho da amostra (N): {sample_size}")
-    print(f"--- Sucesso! {len(df_sample)} linhas ({sample_size} repositórios) salvas em: {output_csv} ---")
+    print("--- Sample size (Cochran's formula with finite population correction) ---")
+    print(f"Population (unique repositories): {population_size}")
+    print(f"Confidence (Z): {confidence_z} | Margin of error: {margin_error * 100:.0f}%")
+    print(f"Sample size (n): {sample_size}")
+    print(f"--- Done! {len(df_sample)} rows ({sample_size} repositories) saved to: {output_csv} ---")
 
 if __name__ == "__main__":
-    INPUT = "data/oldData/rq02/semantic_analysis_rq01.csv"
-    OUTPUT = "data/oldData/rq02/sample.csv"
-    CONFIDENCE_Z = 1.645  # 90% de confiança
+    INPUT = "data/rq02/rq02_frame_149.csv"
+    OUTPUT = "data/rq02/rq02_sample_47.csv"
+    CONFIDENCE_Z = 1.645  # 90% confidence
     MARGIN_ERROR = 0.10   # 10%
     RANDOM_STATE = 42
 

@@ -1,0 +1,14 @@
+categoria_rq01,conflicting,redundant,complementary
+test_instructions,3,12,8
+code_conventions,1,19,14
+run_and_build,7,14,13
+ai_rules,4,5,21
+project_overview,0,14,2
+doc_metadata,1,5,21
+project_structure,0,6,2
+contribution_guidelines,0,7,11
+system_design,0,10,20
+troubleshooting,0,1,2
+security,0,5,9
+deployment_&_infrastructure,0,0,4
+performance_&_resource_management,0,1,6

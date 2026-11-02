@@ -1,25 +1,18 @@
-# Ambientes Virtuais
+# Environment
 .venv/
 venv/
 __pycache__/
+.ipynb_checkpoints/
+.claude/
 
-# Variáveis de Ambiente (Segredos)
+# Secrets
 .env
 
-# Dados e Resultados (gerados pelos scripts)
-data/**/*.json
-data/**/*.gz
-data/**/*.csv
+# Large files (see data/collection/README.md)
+data/collection/seart/seart_24-08-2025.json
+data/collection/ranking/ranked_24-08-2025.csv
 
-# Exceção: amostra reduzida dos dados brutos do SEART.
-!data/newData/input_data/06-16-2026-seart_data_sample.json
-
-# Script referência
-
-scripts-referencia/*
-
-# Test
-
-test/**/*.csv
-test/**/*.json
-test/**/*.gz
+# Large or optional outputs of the reproductions
+results/collection/ranking_reproduction/ranked_24-08-2025.csv
+results/collection/context_files_redownload/
+results/collection/detection_rerun/

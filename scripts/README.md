@@ -1,25 +1,19 @@
-# Scripts
+# scripts
 
-Módulos de processamento (lógica central) e scripts de entrada (`run_*.py`) do pipeline de pesquisa. Ver `README.md` na raiz do projeto para o fluxo de execução completo (Etapas 1-3).
+Scripts of the collection steps, of the sample selection, and of the sample-based reproductions. Run
+them from the repository root, as modules (`python -m scripts.<path>`). The settings are at the top
+of each script.
 
-## Atribuição de Código
+| Script | Step | Input | Output |
+|---|---|---|---|
+| `ranking/run_ranking.py` | Ranking and cut-off at the top 10,000, compared with the study's | `data/collection/seart/seart_24-08-2025.json` | `results/collection/ranking_reproduction/` |
+| `ranking/ranking.py` | Ranking algorithm of the replication package of Mohsenimofidi et al. (unmodified) | — | — |
+| `detect_ai_context_files/run_detect_context.py` | Detection of the five formats via the GitHub API | `data/collection/ranking/top10000_24-08-2025.csv` | `results/collection/detection_rerun/` |
+| `download_ai_context_files.py` | Download of the content of the detected files | `data/collection/detection/detection_top10000_2026-05-07.csv` | `results/collection/context_files_redownload/` |
+| `reproduce_collection_sample.py` | Detection and download redone on 100 repositories of the top 10,000, compared with the study's collection | `data/collection/detection/`, `data/collection/context_files/` | `results/collection/sample_reproduction/` |
+| `reproduce_classification_sample.py` | RQ1 classification redone on a sample (30 random files or the 97 validation files) with Claude Code | `data/collection/context_files/`, prompt in `data/rq01/classifier/` | `results/rq01/sample_reproduction/` |
+| `reproduce_evidence_sample.py` | RQ2 evidence tracing redone on 8 random repositories with Claude Code | `data/rq02/manual_annotation/`, prompt in `data/rq02/evidence/` | `results/rq02/sample_reproduction/` |
+| `sample_manual_validation.py` | Sample size (Cochran) and selection of the 47 repositories | `data/rq02/rq02_frame_149.csv` | `data/rq02/rq02_sample_47.csv` |
 
-- **`ranking.py`**: O algoritmo de ranqueamento (score de popularidade + maturidade, com penalidades para repositórios educacionais/baixo teor de código) foi copiado/adaptado do material suplementar do artigo *"Context Engineering for AI Agents in Open-Source Software"*, disponível em https://zenodo.org/records/18368326 (arquivo `1_data-collection/ranking.py`).
-
-- **`extract_content_structure.py`** e **`classify_headings.py`**: Inspirados na etapa de análise de estrutura de cabeçalhos do mesmo material suplementar (pasta `3_rq2/`, scripts `heading_level_analysis.py` e `heading_stats.py`, referente à RQ2 do artigo original — "What information do open-source developers provide in AI context files and how do they present it?"). O código aqui **não é uma cópia**: é uma reimplementação independente e mais simples, com as seguintes diferenças/acréscimos em relação ao original:
-  - Extração de cabeçalhos via Regex sobre o Markdown bruto, em vez de um parser CommonMark (`markdown_it`) com rastreamento de hierarquia de pais (`path_norm`).
-  - Sem filtro de idioma (o original usa a biblioteca `lingua` para excluir arquivos/cabeçalhos não primariamente em inglês) e sem lematização dos termos normalizados (o original usa `nltk.WordNetLemmatizer` para unificar variações como "test"/"tests"/"testing").
-  - Processa os 5 tipos de arquivo de contexto (`AGENTS.md`, `CLAUDE.md`, Copilot instructions, `GEMINI.md`, `.cursorrules`), enquanto o original processa apenas `AGENTS.md`.
-  - A taxonomia de categorias em `classify_headings.py` é uma classificação **automática por palavra-chave**, com nomes de categoria inspirados conceitualmente no material de referência; o original chegou às suas categorias por **codificação qualitativa manual** dos pesquisadores (`headings_aggregated.xlsx`, com guia de codificação documentado).
-
-- **`detect_ai_context_files/detect_via_api.py`** e **`detect_ai_context_files/detect_via_clone.py`**: Conceitualmente equivalentes ao script `collect_ai_configs.py` do mesmo material suplementar (pasta `1_data-collection/`), que também detecta arquivos de contexto de IA via clonagem rasa (`git clone --depth=1`). O código aqui também **não é uma cópia** — é uma reimplementação independente, mais simples e dividida em duas estratégias (API REST vs. clonagem), com as seguintes diferenças:
-  - **Caminho fixo vs. varredura completa:** ambos os nossos scripts verificam apenas um caminho candidato fixo por tipo de arquivo (ex: `AGENTS.md` na raiz, `.github/copilot-instructions.md`). O original faz `os.walk` na árvore inteira do repositório com Regex, encontrando os arquivos em qualquer subdiretório e suportando múltiplas ocorrências por repositório (nós registramos apenas presença binária 0/1; o original registra os links reais do GitHub para cada ocorrência, unidos por `;`).
-  - **Detecção vs. coleta combinadas:** o original já copia o conteúdo dos arquivos encontrados para uma pasta de saída local (fundindo detecção + coleta de conteúdo numa única etapa) e identifica arquivos "apenas-redirecionamento" (`is_pointer_only_md`, sem cabeçalho Markdown). Nos nossos scripts essas etapas são separadas: a detecção (`detect_via_api.py`/`detect_via_clone.py`) só marca presença; o conteúdo é buscado depois, à parte, em `extract_content_structure.py` — e não há detecção de arquivos-redirecionamento.
-  - **Conjunto de arquivos monitorados:** o original verifica `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, `.github/copilot-instructions.md` e `.github/instructions/*.md` (convenção mais nova de múltiplos arquivos de instrução), mas **não** verifica `.cursorrules`. Foi adicionado o `.cursorrules` (`CURSOR`) por exemplo.
-  - **Paralelismo:** `detect_via_clone.py` usa `ThreadPoolExecutor` (assim como o original) para clonar/verificar em paralelo; `detect_via_api.py` é sequencial, já que o gargalo nesse caso é o rate limit da API do GitHub, não fork de processos — uma estratégia que não tem equivalente direto no original (que evita a API REST inteiramente, preferindo clone local).
-
-## Demais Scripts
-
-- `ranking/run_ranking.py`: Script de entrada da Etapa 1 — configura `INPUT_FILE`/`OUTPUT_FOLDER` e chama `rank_repositories()`.
-- `detect_ai_context_files/run_detect_context.py`: Script de entrada da Etapa 2 — escolhe o modo (`API` ou `CLONE`) e orquestra a detecção.
-- `extract_testing_details.py`: Extração de dados para validação de fidelidade de testes (Etapa 3).
+Detection and download need `GITHUB_TOKEN` in the `.env` file at the root. The reproductions of the
+classification and of the evidence tracing need Claude Code installed and authenticated.

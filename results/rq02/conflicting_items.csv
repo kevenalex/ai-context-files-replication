@@ -1,0 +1,17 @@
+key,item_n,type,categoria_rq01,arquivo_a,trecho_a,arquivo_b,trecho_b
+apache/shardingsphere,1,Opposite directive,test_instructions,AGENTS.md,**Mocking Rule**: default to mocks,CLAUDE.md,"no_mock: ""Simple objects, DTOs, stateless utilities"" [...] judgment: ""Mock only with external dependencies or high construction cost"""
+apache/shardingsphere,2,Opposite directive,test_instructions,AGENTS.md,keep test names concise and scenario-focused,CLAUDE.md,void assert${MethodName}With${Condition}Expects${Result}()
+apache/shardingsphere,3,Opposite directive,test_instructions,AGENTS.md,run the narrowest meaningful checks (see Verification & Commands) and prefer scoped runs,CLAUDE.md,"**Batch Validation**: Run complete test suites at once, avoid frequent incremental checks"
+dotcms/core,1,Divergent version,run_and_build,CLAUDE.md,Java 25 via SDKMAN (.sdkmanrc) [...] Java 25 runtime,copilot-instructions.md,Java 21 runtime (Java 11 syntax for core) [...] sdk use java 21.0.8-ms
+heroui-inc/heroui,1,Divergent version,run_and_build,AGENTS.md,pnpm | 10.26.2 [...] declares `pnpm@10.26.2`,CLAUDE.md,**pnpm**: v10.9.0 (package manager)
+module-federation/core,1,Opposite directive,ai_rules,.cursorrules,"If uncertain, continue reasoning indefinitely",CLAUDE.md,**IMMEDIATE EXECUTION**: Launch parallel Task agents immediately without asking questions [...] **NO CLARIFICATION**: Skip asking about implementation details unless absolutely critical
+module-federation/core,2,Opposite directive,ai_rules,.cursorrules,"Engage in extensive contemplation (minimum 10,000 characters)",CLAUDE.md,Each task should complete in under 30 seconds ideally
+slick/slick,1,Divergent version,run_and_build,CLAUDE.md,sbt ++2.13.18 compile,copilot-instructions.md,sbt ++2.13.16 compile
+slick/slick,2,Divergent version,run_and_build,CLAUDE.md,sbt ++3.8.3 compile,copilot-instructions.md,sbt ++3.3.4 compile
+slick/slick,3,Divergent version,run_and_build,CLAUDE.md,sbt ++2.12.21 compile,copilot-instructions.md,"Support Scala 2.12, 2.13, and 3.x"
+tuist/tuist,1,Divergent command syntax,code_conventions,AGENTS.md,`mise run lint --fix`,copilot-instructions.md,`mise run lint-fix`
+wled/wled,1,Divergent operational value,run_and_build,AGENTS.md,"Build firmware (ESP32, most common target) | 5 min",copilot-instructions.md,Build firmware for a hardware target | 15–20 min
+meshtastic/firmware,1,Divergent fact or reference,ai_rules,AGENTS.md,exposes ~32 MCP tools,copilot-instructions.md,MCP tool surface (43 tools)
+meshtastic/firmware,2,Divergent fact or reference,doc_metadata,copilot-instructions.md,## Agent Tooling Baseline [...] Mirror counterpart: `AGENTS.md` under **Agent Tooling Baseline**.,,
+humanizr/humanizer,1,Divergent command syntax,ai_rules,AGENTS.md,do NOT use `$flow-next-plan` (that breaks specs into tasks) [...] `$flow-next-plan <epic-id>` — research + break into tasks,CLAUDE.md,do NOT use `/flow-next:plan` (that breaks specs into tasks) [...] `/flow-next:plan <epic-id>` — research + break into tasks
+prettier/prettier-vscode,1,Divergent artifact name,run_and_build,CLAUDE.md,Web bundle (`dist/web-extension.cjs`) for vscode.dev/browser,copilot-instructions.md,Web bundle (`dist/web-extension.js`) for vscode.dev/browser

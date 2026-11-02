@@ -16,7 +16,7 @@ FILES_MAPPING = {
 }
 
 def get_file_content_api(repo_name, file_path, token):
-    """Obtém o conteúdo bruto de um arquivo via API do GitHub (usa a branch default automaticamente)."""
+    """Gets the raw content of a file through the GitHub API (uses the default branch automatically)."""
     url = f"https://api.github.com/repos/{repo_name}/contents/{file_path}"
     headers = {"Authorization": f"token {token}"} if token else {}
     try:
@@ -30,14 +30,14 @@ def get_file_content_api(repo_name, file_path, token):
     return None
 
 def safe_repo_dirname(repo_name):
-    """Converte 'owner/repo' em um nome de pasta seguro ('owner__repo')."""
+    """Turns 'owner/repo' into a safe folder name ('owner__repo')."""
     return repo_name.replace("/", "__")
 
 def run_download(input_csv, output_dir, github_token):
-    """Baixa todos os arquivos de contexto de IA presentes em cada repositório e
-    grava um manifesto (CSV) com o caminho local de cada arquivo baixado."""
+    """Downloads every AI context file present in each repository and
+    writes a manifest (CSV) with the local path of each downloaded file."""
     if not os.path.exists(input_csv):
-        print(f"Erro: Arquivo de entrada {input_csv} não encontrado.")
+        print(f"Error: input file {input_csv} not found.")
         return
 
     df = pd.read_csv(input_csv)
@@ -48,7 +48,7 @@ def run_download(input_csv, output_dir, github_token):
     os.makedirs(output_dir, exist_ok=True)
     manifest = []
 
-    print(f"--- Iniciando download de arquivos de contexto de IA ({len(df_target)} repositórios) ---")
+    print(f"--- Downloading AI context files ({len(df_target)} repositories) ---")
 
     for idx, row in df_target.iterrows():
         repo_name = row['name']
@@ -69,24 +69,25 @@ def run_download(input_csv, output_dir, github_token):
                     f.write(content)
                 manifest.append({"repo": repo_name, "file_label": file_label, "local_path": local_path, "status": "ok"})
             else:
-                manifest.append({"repo": repo_name, "file_label": file_label, "local_path": "", "status": "falha"})
+                manifest.append({"repo": repo_name, "file_label": file_label, "local_path": "", "status": "failed"})
 
             time.sleep(0.05 if github_token else 1.0)
 
         if (idx + 1) % 50 == 0:
-            print(f"Progresso: {idx + 1}/{len(df_target)} repositórios processados...")
+            print(f"Progress: {idx + 1}/{len(df_target)} repositories processed...")
 
     manifest_df = pd.DataFrame(manifest)
     manifest_path = os.path.join(output_dir, "download_manifest.csv")
     manifest_df.to_csv(manifest_path, index=False)
 
-    qtd_ok = (manifest_df['status'] == 'ok').sum()
-    qtd_falha = (manifest_df['status'] == 'falha').sum()
-    print(f"--- Sucesso! {qtd_ok} arquivos baixados, {qtd_falha} falhas. Manifesto salvo em: {manifest_path} ---")
+    n_ok = (manifest_df['status'] == 'ok').sum()
+    n_failed = (manifest_df['status'] == 'failed').sum()
+    print(f"--- Done! {n_ok} files downloaded, {n_failed} failures. Manifest saved to: {manifest_path} ---")
 
 if __name__ == "__main__":
-    INPUT = "data/oldData/rq01/ai_context_files_in_repositories/context_api_top10000_24-08-2025_20260507_070457.csv"
-    OUTPUT_DIR = "data/oldData/rq01/rq00"
+    INPUT = "data/collection/detection/detection_top10000_2026-05-07.csv"
+    # A new download goes to results/ so that it does not overwrite the files used in the study.
+    OUTPUT_DIR = "results/collection/context_files_redownload"
     TOKEN = os.getenv("GITHUB_TOKEN")
 
     run_download(INPUT, OUTPUT_DIR, TOKEN)

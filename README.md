@@ -1,132 +1,107 @@
-# Engenharia de Contexto para Agentes de IA: Adoção, Sobreposição e Estrutura de Arquivos de Contexto em Repositórios de Código Aberto - **PESQUISA EM ANDAMENTO**
+# AI Context Files in Practice: Adoption, Content, and Conflicts in Open-Source Repositories
 
-Este projeto tem como objetivo analisar como repositórios populares de código aberto utilizam arquivos de configuração para agentes de IA, como AGENTS.md, CLAUDE.md, GEMINI.md, etc, e com isso identificar padrões de uso e inferências da qualidade e segurança destes projetos.
+Replication package of the paper. It contains the data, scripts, and notebooks that produce every
+table, figure, and number in the paper, in the order in which the study was carried out.
 
-## Estrutura do repositório
-- `data/`: Centraliza todos os dados brutos e processados da pesquisa (ver detalhamento abaixo).
-- `notebooks/`: Jupyter notebooks numerados na ordem do pipeline (`1-...` a `7-...`), mais `notebooks/research_questions/<rq>/` para o aprofundamento de cada questão de pesquisa.
-- `results/`: Resultados consolidados da pesquisa (gráficos, tabelas, artigo compilado).
-- `scripts/`: Scripts geradores/processadores de dados que alimentam os notebooks do projeto (ver "Fluxo de Trabalho" abaixo).
-- `docs/`: Documentação de apoio ao processo de pesquisa (ex.: checklist de correções/reprodutibilidade).
-- `LICENSE` / `CITATION.cff`: Termos de licenciamento e informações de citação do repositório.
-- `.env`: Arquivo de variável de ambiente reservado para as seguintes variáveis usadas pela pesquisa (Arquivo criado apenas em ambiente local):
-  - `GITHUB_TOKEN`;
-  - `GEMINI_API_KEY`.
+## Research questions
 
-### Especificação da pasta `data/`
+- **RQ1**: How prevalent are AI context files in open-source repositories, and what categories of content do they contain?
+- **RQ2**: How do AI context files that coexist in the same repository relate to each other?
 
-A pasta `data/` tem apenas dois diretórios no topo — `oldData/` e `newData/` — correspondendo a duas coletas SEART (a coleta antiga e a nova, em processo de transição). Ambos espelham a mesma estrutura interna:
+## Structure
 
-- `input_data/`: Dado bruto de entrada, intocável — JSON exportado da ferramenta SEART.
-- `rq01/`: Dados da **RQ1** do artigo ("Natureza temática das diretrizes"), incluindo todo o pipeline que a alimenta:
-  - `output_rankings/`: Repositórios ranqueados (Etapa 1).
-  - `ai_context_files_in_repositories/`: Detecção binária de arquivos de contexto de IA (Etapa 2).
-  - `rq00/`: Conteúdo bruto baixado de cada arquivo detectado.
-  - `structure_analysis.csv` / `structure_analysis_classified.csv`: Cabeçalhos extraídos e classificados por categoria.
-  - `regex_analysis_content_ai_context_files.csv`: Classificação temática por repositório.
-- `rq02/`: Dados da **RQ2** do artigo ("Sobreposição lexical e semântica em múltiplos arquivos de contexto"): `semantic_analysis_rq01.csv` e os artefatos de revisão manual (amostra, checklist por repositório, etc).
-- `misc/`: Dados que não pertencem a nenhuma RQ do artigo (ex.: `testing_analysis/`).
+```
+data/        input and intermediate data, by stage (collection/, rq01/, rq02/)
+scripts/     collection: ranking, detection, download, and sample selection; sample-based reproductions
+notebooks/   analyses: collection/, rq01/, rq02/
+results/     tables and figures produced by the notebooks, by stage
+docs/        historical record of the research process (overview-analise page)
+```
 
-## Stack Tecnológica (Tech Stack)
-- **Linguagem:** Python 3.14
-- **Bibliotecas Principais:** Pandas 3.0.2, NumPy 2.4.4, Requests 2.33.1, python-dotenv 1.2.2.
-- **Visualização:** Matplotlib 3.10.9, Seaborn 0.13.2, Jupyter 1.1.1.
-- **Análise Semântica (RQ2):** google-genai 1.75.0 (SDK do Gemini, usado em `notebooks/research_questions/rq02/notebook.ipynb`).
-- Versões fixadas em `requirements.txt` (via `pip freeze`) para garantir reprodutibilidade.
+Each folder has a `README.md` describing the content and origin of each file.
 
-## Configuração e Instalação (Setup)
+## Study workflow
 
-> Todos os comandos abaixo devem ser executados a partir da **raiz do repositório**.
+| # | Step | How to reproduce | Output |
+|---|---|---|---|
+| 1 | Collection of repositories with SEART GitHub Search (2025-08-24) | input data (see `data/collection/README.md`) | `data/collection/seart/` |
+| 2 | Ranking by popularity and maturity, and cut-off at the top 10,000 | `python -m scripts.ranking.run_ranking` | `data/collection/ranking/` |
+| 3 | Detection of the five context file formats (2026-05-07) | `python -m scripts.detect_ai_context_files.run_detect_context` | `data/collection/detection/` |
+| 4 | Download of the files' content (2026-06-24) | `python -m scripts.download_ai_context_files` | `data/collection/context_files/` |
+| 5 | Adoption, formats, and download | `notebooks/collection/01_adoption_and_download.ipynb` | `results/collection/` |
+| 6 | Sampling frame (487 → 149 repositories) | `notebooks/rq01/00_sampling_frame.ipynb` | `results/rq01/` |
+| 7 | Selection of the sample of 47 repositories (97 files) | `python -m scripts.sample_manual_validation` | `data/rq02/rq02_sample_47.csv` |
+| 8 | RQ1: manual annotation by the two annotators and consensus | input data | `data/rq01/manual_annotation/` |
+| 9 | RQ1: LLM classification of the sample (validation, κ = 0.79) and of the 1,828 files (three runs) | procedure in `data/rq01/README.md` | `data/rq01/classifier/` |
+| 10 | RQ1: agreement (κ) and classifier stability (agreement across runs) | `notebooks/rq01/01_sample_and_agreement.ipynb` | `results/rq01/` |
+| 11 | RQ1: content of the files | `notebooks/rq01/02_content.ipynb` | `results/rq01/` |
+| 12 | RQ1: differences across formats | `notebooks/rq01/03_formats.ipynb` | `results/rq01/` |
+| 12a | RQ1: sample-based reproduction of the classification (optional) | `scripts/reproduce_classification_sample.py` and `notebooks/rq01/04_classifier_sample_reproduction.ipynb` | `results/rq01/sample_reproduction/` |
+| 13 | RQ2: manual annotation by the two annotators and evidence | input data | `data/rq02/` |
+| 14 | RQ2: agreement and prevalence of the relationships | `notebooks/rq02/01_agreement_and_relationships.ipynb` | `results/rq02/` |
+| 15 | RQ2: evidence by category and conflict types | `notebooks/rq02/02_evidence_and_conflicts.ipynb` | `results/rq02/` |
+| 15a | RQ2: sample-based reproduction of the evidence tracing (optional) | `scripts/reproduce_evidence_sample.py` and `notebooks/rq02/03_evidence_sample_reproduction.ipynb` | `results/rq02/sample_reproduction/` |
 
-1. Criar ambiente virtual: `python -m venv .venv`
-2. Ativar ambiente: `source .venv/bin/activate`
-3. Instalar dependências: `pip install -r requirements.txt`
-4. Configurar `.env`: criar um arquivo `.env` na raiz do projeto com `GITHUB_TOKEN=seu_token` e `GEMINI_API_KEY=seu_token`.
-   
-## Fluxo de Trabalho (Workflow)
-O processo segue estas etapas, em ordem:
+Steps 2 to 4 query GitHub and do not need to be redone: the outputs used in the paper are in
+`data/`. To check the analyses, it is enough to run the notebooks (steps 5, 6, 10 to 12, 14, and 15).
 
-1. **Ranqueamento (Etapa 1):** 
-   - **Objetivo:** Lê os dados brutos e define os repositórios mais importantes (maduros e populares).
-   - **Arquivo:** `scripts/ranking/run_ranking.py`
-   - **Variáveis principais:** `INPUT_FILE` (em `data/newData/input_data/` ou `data/oldData/input_data/`), `OUTPUT_FOLDER` (`data/newData/rq01/output_rankings/` ou `data/oldData/rq01/output_rankings/`, conforme a coleta processada).
-   - **Execução:** `python -m scripts.ranking.run_ranking` (a partir da raiz do projeto — necessário rodar como módulo por causa do import `scripts.ranking.ranking`).
-   - **Exemplo:** entrada = JSON com milhares de repositórios do GitHub; saída = CSV em `output_rankings/` com os repositórios ordenados por uma pontuação (`rank_score`).
+## Where each result of the paper comes from
 
-2. **Detecção (Etapa 2):** 
-   - **Objetivo:** Verifica quais repositórios do ranking possuem arquivos para IA.
-   - **Arquivo:** `scripts/detect_ai_context_files/run_detect_context.py`
-   - **Variáveis principais:** `MODE` ("API" ou "CLONE"), `INPUT_CSV` (CSV gerado na Etapa 1, em `data/newData/rq01/output_rankings/` ou `data/oldData/rq01/output_rankings/`), `OUTPUT_FOLDER` (`data/newData/rq01/ai_context_files_in_repositories/` ou `data/oldData/rq01/ai_context_files_in_repositories/`).
-   - **Execução:** `python -m scripts.detect_ai_context_files.run_detect_context` (a partir da raiz do projeto — necessário rodar como módulo pelos mesmos motivos da Etapa 1).
-   - **Exemplo:** entrada = CSV gerado pelo ranking; saída = novo CSV em `ai_context_files_in_repositories/` com colunas 0/1 indicando a presença de arquivos como AGENTS.md e CLAUDE.md.
+| In the paper | Notebook | File in `results/` |
+|---|---|---|
+| Data Collection: 228,890 SEART repositories, 1,256 with a file, 1,858 files, 1,828 downloaded | `collection/01_adoption_and_download` | — |
+| Motivating example (dotCMS) | `collection/01_adoption_and_download` | — |
+| Threats to Validity: 83 archived in the top 10,000, 62.4% overlap with Mohsenimofidi et al. | `collection/01_adoption_and_download` | — |
+| Table of formats | `collection/01_adoption_and_download` | `collection/formats-table.svg` |
+| Annotation Procedure: P35, frame of 149, sample of 47 | `rq01/00_sampling_frame`, `rq01/01_sample_and_agreement` | `rq01/pair_similarity.csv` |
+| κ between annotators (RQ1) and κ of the classifier validation on the sample | `rq01/01_sample_and_agreement` | `rq01/classifier_validation_kappa.csv` |
+| Stability across the three runs | `rq01/01_sample_and_agreement` | `rq01/run_stability.csv` |
+| Table of categories | `rq01/02_content` | `rq01/categories-table.svg` |
+| Co-occurrence figure (Jaccard) | `rq01/02_content` | `rq01/jaccard-categories-column.svg` |
+| Figure of size by number of categories | `rq01/02_content` | `rq01/size-by-categories.svg` |
+| Format × category table | `rq01/03_formats` | `rq01/format-category-single-file.svg` |
+| κ between annotators (RQ2) and sample composition | `rq02/01_agreement_and_relationships` | — |
+| Table of relationships (90% CI) | `rq02/01_agreement_and_relationships` | `rq02/relationship_prevalence.csv` |
+| Repositories without redundancy and files that refer to another | `rq02/01_agreement_and_relationships` | `rq02/references_between_files.csv` |
+| Figure of evidence by category | `rq02/02_evidence_and_conflicts` | `rq02/category-by-relationship.pdf` |
+| Table of conflict types | `rq02/02_evidence_and_conflicts` | `rq02/conflict_types.csv` |
 
-3. **Coleta de Conteúdo Bruto (Etapa 3):**
-   - **Objetivo:** Baixar o conteúdo real de cada arquivo de contexto detectado na Etapa 2.
-   - **Arquivo:** `scripts/download_ai_context_files.py`
-   - **Variáveis principais:** `INPUT` (CSV da Etapa 2), `OUTPUT_DIR` (`data/oldData/rq01/rq00/` ou `data/newData/rq01/rq00/`).
-   - **Saída:** Um arquivo por repositório/tipo de contexto baixado, mais um `download_manifest.csv` na mesma pasta.
-   - **Execução:** `python -m scripts.download_ai_context_files`.
+## How to reproduce
 
-4. **Análise de Conteúdo — RQ1 (Etapa 4):**
-   - **Objetivo:** Classificar tematicamente as diretrizes coletadas (natureza temática das diretrizes).
-   - **Scripts:**
-     - `scripts/regex_analysis_content.py`: classifica, por repositório, quais categorias temáticas (ex.: "Testing Instructions", "Architecture") aparecem nos arquivos baixados na Etapa 3. **Entrada:** `rq00/download_manifest.csv`. **Saída:** `rq01/regex_analysis_content_ai_context_files.csv`.
-     - `scripts/extract_content_structure.py`: extrai os cabeçalhos Markdown de cada arquivo de contexto de IA via API do GitHub. **Entrada:** CSV da Etapa 2. **Saída:** `rq01/structure_analysis.csv`.
-     - `scripts/classify_headings.py`: classifica semanticamente cada cabeçalho extraído na mesma taxonomia usada por `regex_analysis_content.py`. **Entrada:** `rq01/structure_analysis.csv`. **Saída:** `rq01/structure_analysis_classified.csv`.
-   - **Execução:** cada script é executado diretamente (`python -m scripts.<nome_do_script>`), ajustando as variáveis `INPUT`/`OUTPUT` no bloco `if __name__ == "__main__"`.
+Requirements: Python 3.14 and, to render the PDFs of the figures from the SVGs, `rsvg-convert`
+(package `librsvg`). All commands are run from the repository root.
 
-5. **Validação de Fidelidade de Testes (Etapa 5, `misc`):**
-   - **Objetivo:** Auditar se as instruções de teste presentes nos arquivos de contexto realmente correspondem ao processo de teste do repositório (checagem de validade, não é uma RQ do artigo).
-   - **Arquivo:** `scripts/extract_testing_details.py`
-   - **Variáveis principais:** `INPUT` (`rq01/structure_analysis_classified.csv`), `OUTPUT` (`misc/testing_analysis/testing_validity_data.json`).
-   - **Execução:** `python -m scripts.extract_testing_details`.
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
 
-6. **Amostragem e Revisão Manual — RQ2 (Etapa 6):**
-   - **Objetivo:** Selecionar e preparar uma amostra estatisticamente significativa de repositórios com múltiplos arquivos de contexto para revisão manual de sobreposição lexical/semântica.
-   - **Scripts:**
-     - `scripts/sample_manual_validation.py`: calcula o tamanho da amostra pela fórmula de Cochran (com correção para população finita) e sorteia os repositórios. **Entrada:** `rq02/semantic_analysis_rq01.csv`. **Saída:** `rq02/sample.csv`.
-     - `scripts/build_manual_review_sheet.py`: monta uma planilha "cega" (sem indicar a classificação automática) com links diretos para os arquivos de cada repositório amostrado. **Entrada:** `rq02/sample.csv`. **Saída:** `rq02/manual_review_blind.csv`.
-     - `scripts/build_repo_checklist.py`: consolida um checklist por repositório (um repositório pode ter mais de um par de arquivos a revisar). **Entrada:** CSV de amostra com links. **Saída:** `rq02/repo_checklist.csv`.
-   - **Execução:** cada script é executado diretamente (`python -m scripts.<nome_do_script>`), ajustando as variáveis `INPUT`/`OUTPUT` no bloco `if __name__ == "__main__"`.
+# runs the analysis notebooks and rewrites their outputs in results/
+jupyter nbconvert --to notebook --execute --inplace notebooks/collection/*.ipynb notebooks/rq01/0[0-3]*.ipynb notebooks/rq02/0[1-2]*.ipynb
+```
 
-### Etapas 1 a 6: Como Executar
+## Reproducing the collection and classification steps
 
-Ver a descrição detalhada (objetivo, arquivo, variáveis e exemplos) de cada etapa na seção "Fluxo de Trabalho" acima. Todos os scripts seguem o mesmo padrão de uso: abrir o arquivo, ajustar as variáveis de configuração (`INPUT`/`OUTPUT`, `INPUT_CSV`/`OUTPUT_FOLDER`, `MANIFEST`, conforme o caso) no bloco `if __name__ == "__main__":`, e executar com `python -m scripts.<caminho_do_script>` a partir da raiz do projeto (necessário rodar como módulo por causa dos imports internos dos pacotes `ranking` e `detect_ai_context_files`).
+The steps that query GitHub or an LLM are costly. The package allows redoing them in full or on a
+sample. In all cases, the output goes to `results/` and is compared with the study's data, which is
+not overwritten.
 
-### Etapa 7: Análise e Visualização
+| Step | Command | What it compares | Cost |
+|---|---|---|---|
+| Ranking (full) | `python -m scripts.ranking.run_ranking` | positions and top 10,000 against `data/collection/ranking/` | ~2 min; requires the SEART export (see `data/collection/README.md`) |
+| Detection and download (sample) | `python -m scripts.reproduce_collection_sample` | presence of the formats and content of 100 repositories against the study's collection | ~600 GitHub API requests; requires `GITHUB_TOKEN` in `.env` |
+| RQ1 classification (sample) | `python -m scripts.reproduce_classification_sample` | 30 random files against runs 1 to 3 | one Claude Code session |
+| Classifier validation (sample) | `python -m scripts.reproduce_classification_sample --validation` | κ of the 97 annotated files against the consensus | four Claude Code sessions |
+| RQ2 evidence tracing (sample) | `python -m scripts.reproduce_evidence_sample` | items and categories of 8 random repositories against the study's | one Claude Code session |
 
-Nesta etapa, utilizamos os notebooks para transformar os dados coletados em gráficos e insights.
+After the Claude Code reproductions, run `notebooks/rq01/04_classifier_sample_reproduction.ipynb`
+and `notebooks/rq02/03_evidence_sample_reproduction.ipynb`. LLM outputs are not deterministic: the
+expected result is an agreement with the study similar to the agreement among the study's own runs.
+Detection and download reflect GitHub today, so some files will have changed since 2026.
 
-Como usar:
-1. Com o ambiente virtual ativo, execute: `jupyter notebook`
-2. Abra a pasta `notebooks/` e escolha um dos arquivos, seguindo a numeração do pipeline:
-  - `1-seart_data_study.ipynb`: Estudo exploratório dos dados brutos do SEART.
-  - `2-ranking_data_study.ipynb`: Estudo dos dados ranqueados (Etapa 1).
-  - `3-context-ai-repo-study.ipynb`: Análise de adesão — percentual de repositórios com arquivos de contexto de IA (Etapa 2).
-  - `4-structure_analysis_study.ipynb`: Estudo da estrutura de cabeçalhos extraída (Etapa 4).
-  - `4.1-structure_analysis_quantitative.ipynb`: Análise quantitativa complementar dos cabeçalhos (distribuição por nível, tópicos mais comuns, comparação entre tipos de arquivo — Etapa 4).
-  - `5-ai-file-classification-study.ipynb`: Estudo da classificação temática dos cabeçalhos (Etapa 4).
-  - `6.1-test-validity-checker.ipynb`: Checagem da validação de fidelidade de testes (Etapa 5).
-  - `7-repo_level_category_study.ipynb`: Estudo da classificação temática por repositório (Etapa 4, `regex_analysis_content.py`).
-  - `8-analysis_comparison.ipynb`: Compara resultados de coletas diferentes (`oldData` vs. `newData`) para mostrar a evolução temporal da adesão.
-  - `research_questions/rq02/notebook.ipynb`: Notebook de aprofundamento da RQ2 do artigo (análise semântica via LLM e amostragem para revisão manual).
+To redo the detection and download in full, use the scripts of steps 3 and 4 (about 50,000 API
+requests). To redo the full classification, follow `data/rq01/README.md`.
 
-## Uso do Token do GitHub
+## License and citation
 
-Para evitar bloqueios por excesso de acessos na API do GitHub, você deve:
-1. Criar um arquivo chamado .env na raiz do projeto.
-2. Escrever dentro dele: GITHUB_TOKEN=seu_token_aqui
-
-## Artefatos Publicados
-
-Além do código e dos dados processados neste repositório, os dados brutos do SEART e a planilha de revisão manual da RQ2 (mantida à parte, fora do controle de versão) estão publicados no Zenodo, sob o DOI [10.5281/zenodo.21388606](https://doi.org/10.5281/zenodo.21388606).
-
-> **Acesso:** o registro no Zenodo é público, mas o acesso aos arquivos é **privado por decisão do autor**. Caso o acesso seja necessário, ele deve ser solicitado diretamente pela página do depósito no Zenodo.
-
-## Como Citar
-
-Este repositório é licenciado sob os termos do arquivo [`LICENSE`](./LICENSE) (MIT). Para citar este trabalho, utilize as informações do arquivo [`CITATION.cff`](./CITATION.cff) ou a referência abaixo:
-
-> SANTOS, Keven Alex Barbosa. **Engenharia de Contexto para Agentes de IA: Adoção, Sobreposição e Estrutura de Arquivos de Contexto em Repositórios de Código Aberto**. Universidade Federal de Campina Grande, 2026. Disponível em: https://github.com/kevenalex/ai-contexts-file. DOI: [10.5281/zenodo.21388606](https://doi.org/10.5281/zenodo.21388606).
-
----
+Code and data under the MIT license (`LICENSE`). To cite, see `CITATION.cff`.

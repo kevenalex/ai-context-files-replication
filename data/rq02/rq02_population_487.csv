@@ -1,0 +1,488 @@
+repo,qtd_arquivos,arquivos_para_analisar
+elastic/elasticsearch,2,AGENTS.md; CLAUDE.md
+home-assistant/core,3,AGENTS.md; CLAUDE.md; COPILOT
+microsoft/vscode,2,AGENTS.md; COPILOT
+getsentry/sentry,2,AGENTS.md; CLAUDE.md
+microsoft/typescript,3,AGENTS.md; CLAUDE.md; COPILOT
+gitlabhq/gitlabhq,2,AGENTS.md; CLAUDE.md
+grafana/grafana,2,AGENTS.md; CLAUDE.md
+ansible/ansible,2,AGENTS.md; CLAUDE.md
+JuliaLang/julia,2,AGENTS.md; CLAUDE.md
+discourse/discourse,3,AGENTS.md; CLAUDE.md; GEMINI.md
+electron/electron,2,CLAUDE.md; COPILOT
+pytorch/pytorch,3,AGENTS.md; CLAUDE.md; COPILOT
+mui/material-ui,2,AGENTS.md; CLAUDE.md
+meteor/meteor,2,AGENTS.md; CLAUDE.md
+vercel/next.js,2,AGENTS.md; CLAUDE.md
+seleniumhq/selenium,3,AGENTS.md; CLAUDE.md; COPILOT
+tryghost/ghost,2,AGENTS.md; CLAUDE.md
+webpack/webpack,2,AGENTS.md; CLAUDE.md
+mozilla/pdf.js,2,AGENTS.md; CLAUDE.md
+metabase/metabase,2,CLAUDE.md; COPILOT
+apache/superset,4,AGENTS.md; CLAUDE.md; COPILOT; GEMINI.md
+pingcap/tidb,2,AGENTS.md; CLAUDE.md
+clickhouse/clickhouse,2,AGENTS.md; COPILOT
+prometheus/prometheus,2,AGENTS.md; CLAUDE.md
+apache/airflow,2,AGENTS.md; CLAUDE.md
+vitessio/vitess,3,AGENTS.md; CLAUDE.md; COPILOT
+cypress-io/cypress,2,AGENTS.md; CLAUDE.md
+huggingface/transformers,3,AGENTS.md; CLAUDE.md; COPILOT
+compiler-explorer/compiler-explorer,2,CLAUDE.md; COPILOT
+rabbitmq/rabbitmq-server,3,AGENTS.md; CLAUDE.md; GEMINI.md
+instructure/canvas-lms,2,AGENTS.md; CLAUDE.md
+directus/directus,2,AGENTS.md; COPILOT
+facebook/rocksdb,2,AGENTS.md; CLAUDE.md
+automattic/wp-calypso,2,AGENTS.md; CLAUDE.md
+apereo/cas,2,AGENTS.md; COPILOT
+denoland/deno,2,CLAUDE.md; COPILOT
+azure/azure-sdk-for-net,2,AGENTS.md; COPILOT
+remix-run/react-router,2,AGENTS.md; CLAUDE.md
+opf/openproject,3,AGENTS.md; CLAUDE.md; COPILOT
+conda/conda,3,AGENTS.md; CLAUDE.md; COPILOT
+apache/shardingsphere,2,AGENTS.md; CLAUDE.md
+apache/spark,2,AGENTS.md; CLAUDE.md
+homebrew/brew,2,AGENTS.md; CLAUDE.md
+gogs/gogs,2,AGENTS.md; CLAUDE.md
+elastic/logstash,2,AGENTS.md; CLAUDE.md
+sylius/sylius,3,AGENTS.md; CLAUDE.md; COPILOT
+sap/openui5,2,AGENTS.md; CLAUDE.md
+kubernetes/kops,3,AGENTS.md; CLAUDE.md; GEMINI.md
+jestjs/jest,2,CLAUDE.md; COPILOT
+go-gitea/gitea,2,AGENTS.md; CLAUDE.md
+apache/thrift,2,AGENTS.md; CLAUDE.md
+apache/camel,2,AGENTS.md; CLAUDE.md
+homebrew/homebrew-cask,2,AGENTS.md; CLAUDE.md
+microsoft/fluentui,2,AGENTS.md; CLAUDE.md
+jsdom/jsdom,2,AGENTS.md; CLAUDE.md
+saleor/saleor,2,AGENTS.md; CLAUDE.md
+azure/azure-sdk-for-python,2,AGENTS.md; COPILOT
+mapbox/mapbox-gl-js,3,AGENTS.md; CLAUDE.md; GEMINI.md
+spree/spree,2,AGENTS.md; CLAUDE.md
+rubocop/rubocop,2,AGENTS.md; CLAUDE.md
+mozilla-mobile/firefox-ios,2,AGENTS.md; CLAUDE.md
+internetarchive/openlibrary,3,AGENTS.md; CLAUDE.md; COPILOT
+datahub-project/datahub,2,AGENTS.md; CLAUDE.md
+azure/azure-sdk-for-java,2,AGENTS.md; COPILOT
+datadog/datadog-agent,2,AGENTS.md; CLAUDE.md
+mochajs/mocha,2,AGENTS.md; COPILOT
+wordpress/gutenberg,2,AGENTS.md; CLAUDE.md
+fabricjs/fabric.js,2,AGENTS.md; CLAUDE.md
+telegramdesktop/tdesktop,2,AGENTS.md; CLAUDE.md
+mautic/mautic,3,AGENTS.md; CLAUDE.md; GEMINI.md
+insightsoftwareconsortium/itk,2,AGENTS.md; CLAUDE.md
+abpframework/abp,2,COPILOT; CURSOR
+Homebrew/homebrew-core,2,AGENTS.md; CLAUDE.md
+quarkusio/quarkus,2,AGENTS.md; CLAUDE.md
+aws/aws-cdk,2,AGENTS.md; CLAUDE.md
+n8n-io/n8n,2,AGENTS.md; CLAUDE.md
+forem/forem,4,AGENTS.md; CLAUDE.md; COPILOT; CURSOR
+prestashop/prestashop,4,AGENTS.md; CLAUDE.md; COPILOT; GEMINI.md
+getsentry/sentry-javascript,2,AGENTS.md; CLAUDE.md
+zoneminder/zoneminder,2,AGENTS.md; CLAUDE.md
+apache/pinot,3,AGENTS.md; CLAUDE.md; COPILOT
+netbox-community/netbox,2,AGENTS.md; CLAUDE.md
+microsoft/playwright,2,CLAUDE.md; COPILOT
+tikv/tikv,2,AGENTS.md; CLAUDE.md
+swc-project/swc,2,AGENTS.md; CLAUDE.md
+pulumi/pulumi,2,AGENTS.md; CLAUDE.md
+yugabyte/yugabyte-db,2,AGENTS.md; CLAUDE.md
+jupyterlab/jupyterlab,2,AGENTS.md; CLAUDE.md
+nrwl/nx,2,AGENTS.md; CLAUDE.md
+tidev/titanium-sdk,2,AGENTS.md; CLAUDE.md
+gstreamer/gstreamer,3,AGENTS.md; CLAUDE.md; GEMINI.md
+gnachman/iterm2,2,AGENTS.md; CLAUDE.md
+apache/groovy,2,AGENTS.md; COPILOT
+oven-sh/bun,2,AGENTS.md; CLAUDE.md
+graylog2/graylog2-server,2,AGENTS.md; CLAUDE.md
+dotnet/msbuild,2,AGENTS.md; COPILOT
+dotnet/orleans,2,AGENTS.md; COPILOT
+mongodb/mongoid,2,AGENTS.md; CLAUDE.md
+rapid7/metasploit-framework,2,AGENTS.md; COPILOT
+Floorp-Projects/Floorp,2,COPILOT; CURSOR
+debezium/debezium,2,AGENTS.md; COPILOT
+handsontable/handsontable,2,AGENTS.md; CLAUDE.md
+wordpress-mobile/wordpress-ios,2,AGENTS.md; CLAUDE.md
+alibaba/nacos,2,AGENTS.md; CLAUDE.md
+apache/trafficserver,2,AGENTS.md; COPILOT
+argoproj/argo-cd,2,AGENTS.md; CLAUDE.md
+scylladb/scylladb,2,AGENTS.md; COPILOT
+rust-lang/rust-analyzer,2,AGENTS.md; CLAUDE.md
+bigbluebutton/bigbluebutton,2,AGENTS.md; CLAUDE.md
+grafana/k6,2,AGENTS.md; CLAUDE.md
+zed-industries/zed,3,AGENTS.md; CLAUDE.md; GEMINI.md
+umijs/umi,2,CLAUDE.md; CURSOR
+kong/insomnia,2,AGENTS.md; CLAUDE.md
+unoplatform/uno,2,AGENTS.md; CLAUDE.md
+meshery/meshery,2,AGENTS.md; COPILOT
+ag-grid/ag-grid,2,AGENTS.md; CLAUDE.md
+hluk/copyq,2,AGENTS.md; CLAUDE.md
+eclipse-theia/theia,2,CLAUDE.md; COPILOT
+rescript-lang/rescript-compiler,2,AGENTS.md; CLAUDE.md
+dimagi/commcare-hq,2,AGENTS.md; CLAUDE.md
+go-delve/delve,2,AGENTS.md; CLAUDE.md
+jaegertracing/jaeger,2,AGENTS.md; CLAUDE.md
+langchain-ai/langchain,2,AGENTS.md; CLAUDE.md
+samuelclay/newsblur,2,AGENTS.md; CLAUDE.md
+snapcore/snapd,2,AGENTS.md; COPILOT
+gohugoio/hugo,2,AGENTS.md; CLAUDE.md
+hathach/tinyusb,2,AGENTS.md; CLAUDE.md
+rsyslog/rsyslog,2,AGENTS.md; COPILOT
+zammad/zammad,2,AGENTS.md; COPILOT
+go-swagger/go-swagger,2,AGENTS.md; COPILOT
+azure/azure-sdk-for-js,2,AGENTS.md; COPILOT
+analysis-tools-dev/static-analysis,4,AGENTS.md; CLAUDE.md; COPILOT; CURSOR
+pubkey/rxdb,3,AGENTS.md; CLAUDE.md; COPILOT
+lammps/lammps,2,COPILOT; GEMINI.md
+dynamods/dynamo,3,AGENTS.md; CLAUDE.md; COPILOT
+reactiveui/reactiveui,2,CLAUDE.md; COPILOT
+cortexproject/cortex,2,AGENTS.md; CLAUDE.md
+unleash/unleash,2,AGENTS.md; CLAUDE.md
+apache/seatunnel,3,AGENTS.md; CLAUDE.md; GEMINI.md
+calcom/cal.com,2,AGENTS.md; CLAUDE.md
+openemr/openemr,2,CLAUDE.md; COPILOT
+rustdesk/rustdesk,3,AGENTS.md; CLAUDE.md; GEMINI.md
+SynoCommunity/spksrc,2,AGENTS.md; COPILOT
+posthog/posthog,3,AGENTS.md; CLAUDE.md; CURSOR
+axonframework/axonframework,2,AGENTS.md; CLAUDE.md
+wled/WLED,2,AGENTS.md; COPILOT
+wled-dev/WLED,2,AGENTS.md; COPILOT
+photoprism/photoprism,2,AGENTS.md; COPILOT
+prisma/prisma,3,AGENTS.md; CLAUDE.md; GEMINI.md
+aircoookie/wled,2,AGENTS.md; COPILOT
+idaholab/moose,2,AGENTS.md; CLAUDE.md
+graphql-java/graphql-java,3,AGENTS.md; CLAUDE.md; COPILOT
+anysoftkeyboard/anysoftkeyboard,2,AGENTS.md; CLAUDE.md
+hapifhir/hapi-fhir,2,AGENTS.md; CLAUDE.md
+easycorp/easyadminbundle,2,AGENTS.md; COPILOT
+cadence-workflow/cadence,2,AGENTS.md; CLAUDE.md
+kubeflow/pipelines,3,AGENTS.md; CLAUDE.md; COPILOT
+outline/outline,2,AGENTS.md; CLAUDE.md
+home-assistant/frontend,3,AGENTS.md; CLAUDE.md; COPILOT
+nomicfoundation/hardhat,3,AGENTS.md; CLAUDE.md; COPILOT
+systemd/systemd,2,AGENTS.md; CLAUDE.md
+humanizr/humanizer,2,AGENTS.md; CLAUDE.md
+libsdl-org/sdl,2,AGENTS.md; CLAUDE.md
+countly/countly-server,2,CLAUDE.md; COPILOT
+johannesjo/super-productivity,2,AGENTS.md; CLAUDE.md
+uber/cadence,2,AGENTS.md; CLAUDE.md
+koenkk/zigbee2mqtt,2,AGENTS.md; COPILOT
+bagisto/bagisto,3,AGENTS.md; CLAUDE.md; COPILOT
+payloadcms/payload,2,AGENTS.md; CLAUDE.md
+azure/azure-sdk-for-go,2,AGENTS.md; COPILOT
+firoorg/firo,2,AGENTS.md; CLAUDE.md
+brndnmtthws/conky,2,AGENTS.md; CLAUDE.md
+strimzi/strimzi-kafka-operator,2,AGENTS.md; CLAUDE.md
+streamlit/streamlit,3,AGENTS.md; CLAUDE.md; COPILOT
+remotion-dev/remotion,3,AGENTS.md; CLAUDE.md; COPILOT
+Checkmk/checkmk,2,AGENTS.md; CLAUDE.md
+chatwoot/chatwoot,2,AGENTS.md; CLAUDE.md
+linq2db/linq2db,2,CLAUDE.md; COPILOT
+code-dot-org/code-dot-org,2,AGENTS.md; CLAUDE.md
+ng-zorro/ng-zorro-antd,2,AGENTS.md; COPILOT
+fastled/fastled,3,CLAUDE.md; GEMINI.md; CURSOR
+provenance-emu/provenance,4,AGENTS.md; CLAUDE.md; COPILOT; CURSOR
+wikimedia/wikipedia-ios,3,AGENTS.md; CLAUDE.md; COPILOT
+mongodb/mongo-ruby-driver,2,AGENTS.md; CLAUDE.md
+writethedocs/www,2,AGENTS.md; CLAUDE.md
+grafana/mimir,2,AGENTS.md; CLAUDE.md
+gogf/gf,2,AGENTS.md; CLAUDE.md
+erxes/erxes,3,AGENTS.md; CLAUDE.md; CURSOR
+mantidproject/mantid,2,AGENTS.md; COPILOT
+chillicream/graphql-platform,2,AGENTS.md; CLAUDE.md
+mozilla/rhino,2,AGENTS.md; CLAUDE.md
+coollabsio/coolify,2,AGENTS.md; CLAUDE.md
+lostisland/faraday,2,COPILOT; CURSOR
+artsy/eigen,2,AGENTS.md; CLAUDE.md
+runatlantis/atlantis,2,AGENTS.md; COPILOT
+slick/slick,2,CLAUDE.md; COPILOT
+facebook/lexical,2,AGENTS.md; CLAUDE.md
+softfever/orcaslicer,2,AGENTS.md; CLAUDE.md
+google/perfetto,2,CLAUDE.md; GEMINI.md
+jandedobbeleer/oh-my-posh,2,AGENTS.md; COPILOT
+fluentassertions/fluentassertions,2,CLAUDE.md; COPILOT
+ddev/ddev,3,AGENTS.md; CLAUDE.md; COPILOT
+tuist/tuist,3,AGENTS.md; CLAUDE.md; COPILOT
+open-telemetry/opentelemetry-collector,2,AGENTS.md; CLAUDE.md
+auth0/node-auth0,2,AGENTS.md; COPILOT
+open-telemetry/opentelemetry-collector-contrib,2,AGENTS.md; CLAUDE.md
+kornia/kornia,2,CLAUDE.md; COPILOT
+cloudfoundry/uaa,3,AGENTS.md; CLAUDE.md; COPILOT
+deepset-ai/haystack,2,AGENTS.md; CLAUDE.md
+ethereum-optimism/optimism,2,AGENTS.md; CLAUDE.md
+mongodb/mongo-go-driver,2,AGENTS.md; CLAUDE.md
+bpftrace/bpftrace,2,AGENTS.md; CLAUDE.md
+MultiQC/MultiQC,2,CLAUDE.md; CURSOR
+dotcms/core,2,CLAUDE.md; COPILOT
+open-telemetry/opentelemetry-java-instrumentation,2,AGENTS.md; COPILOT
+feast-dev/feast,2,AGENTS.md; CLAUDE.md
+gitkraken/vscode-gitlens,2,AGENTS.md; CLAUDE.md
+k8sgateway/k8sgateway,3,AGENTS.md; CLAUDE.md; COPILOT
+iTwin/itwinjs-core,2,CLAUDE.md; COPILOT
+near/nearcore,2,AGENTS.md; CLAUDE.md
+theodinproject/theodinproject,2,AGENTS.md; CLAUDE.md
+software-mansion/react-native-gesture-handler,2,AGENTS.md; CLAUDE.md
+langflow-ai/langflow,2,AGENTS.md; CLAUDE.md
+openucx/ucx,2,AGENTS.md; CLAUDE.md
+nginx/kubernetes-ingress,2,AGENTS.md; COPILOT
+sebastienros/jint,2,AGENTS.md; CLAUDE.md
+wpscanteam/wpscan,2,AGENTS.md; CLAUDE.md
+nginxinc/kubernetes-ingress,2,AGENTS.md; COPILOT
+The-OpenROAD-Project/OpenROAD,2,AGENTS.md; CLAUDE.md
+restsharp/restsharp,2,CLAUDE.md; COPILOT
+open-policy-agent/gatekeeper,2,AGENTS.md; COPILOT
+automattic/sensei,2,AGENTS.md; CLAUDE.md
+pjsip/pjproject,2,CLAUDE.md; COPILOT
+weseek/growi,2,AGENTS.md; CLAUDE.md
+getsentry/sentry-php,2,AGENTS.md; CLAUDE.md
+phan/phan,2,CLAUDE.md; COPILOT
+open-metadata/openmetadata,3,AGENTS.md; CLAUDE.md; COPILOT
+statelyai/xstate,2,AGENTS.md; CLAUDE.md
+meshtastic/firmware,2,AGENTS.md; COPILOT
+fission/fission,2,AGENTS.md; CLAUDE.md
+danbooru/danbooru,2,AGENTS.md; CLAUDE.md
+openms/openms,3,AGENTS.md; CLAUDE.md; COPILOT
+open-telemetry/opentelemetry-go,3,AGENTS.md; CLAUDE.md; COPILOT
+thrasher-corp/gocryptotrader,3,AGENTS.md; CLAUDE.md; COPILOT
+goadesign/goa,3,AGENTS.md; CLAUDE.md; CURSOR
+rotki/rotki,2,AGENTS.md; CLAUDE.md
+jazzband/django-oauth-toolkit,2,AGENTS.md; COPILOT
+redisearch/redisearch,2,AGENTS.md; CLAUDE.md
+kestra-io/kestra,2,AGENTS.md; CLAUDE.md
+azuread/microsoft-authentication-library-for-js,2,AGENTS.md; COPILOT
+evcc-io/evcc,3,AGENTS.md; COPILOT; CURSOR
+kgateway-dev/kgateway,3,AGENTS.md; CLAUDE.md; COPILOT
+igniteui/igniteui-angular,2,AGENTS.md; COPILOT
+duckduckgo/android,2,AGENTS.md; CLAUDE.md
+sst/sst,2,AGENTS.md; CLAUDE.md
+elsa-workflows/elsa-core,3,AGENTS.md; CLAUDE.md; COPILOT
+mudlet/mudlet,4,AGENTS.md; CLAUDE.md; COPILOT; CURSOR
+koel/koel,3,AGENTS.md; CLAUDE.md; COPILOT
+datadog/dd-trace-js,2,AGENTS.md; CLAUDE.md
+vitest-dev/vitest,3,AGENTS.md; CLAUDE.md; COPILOT
+bbc/simorgh,2,AGENTS.md; COPILOT
+nvidia/megatron-lm,3,AGENTS.md; CLAUDE.md; CURSOR
+gui-cs/terminal.gui,4,AGENTS.md; CLAUDE.md; COPILOT; CURSOR
+louislam/uptime-kuma,2,AGENTS.md; COPILOT
+openmc-dev/openmc,3,AGENTS.md; CLAUDE.md; COPILOT
+netdata/netdata,3,AGENTS.md; CLAUDE.md; GEMINI.md
+jrsoftware/issrc,2,AGENTS.md; CLAUDE.md
+grafana/pyroscope,2,AGENTS.md; CLAUDE.md
+tldraw/tldraw,2,AGENTS.md; CLAUDE.md
+gopasspw/gopass,2,AGENTS.md; COPILOT
+medic/cht-core,2,AGENTS.md; CLAUDE.md
+sboudrias/inquirer.js,2,AGENTS.md; CLAUDE.md
+woocommerce/woocommerce-android,2,AGENTS.md; CLAUDE.md
+fossasia/eventyay-tickets,3,CLAUDE.md; COPILOT; CURSOR
+nicklockwood/swiftformat,2,AGENTS.md; CLAUDE.md
+exist-db/exist,2,AGENTS.md; CLAUDE.md
+naver/billboard.js,2,AGENTS.md; COPILOT
+rnmapbox/maps,2,AGENTS.md; CLAUDE.md
+onevcat/kingfisher,2,AGENTS.md; CLAUDE.md
+thorsten/phpmyfaq,2,AGENTS.md; CLAUDE.md
+coolprop/coolprop,2,AGENTS.md; CLAUDE.md
+triplea-game/triplea,2,AGENTS.md; COPILOT
+reactivex/rxpy,2,AGENTS.md; CLAUDE.md
+htcondor/htcondor,2,AGENTS.md; COPILOT
+kumahq/kuma,2,CLAUDE.md; COPILOT
+dartsim/dart,3,AGENTS.md; CLAUDE.md; GEMINI.md
+facontidavide/plotjuggler,2,CLAUDE.md; COPILOT
+framer/motion,3,AGENTS.md; CLAUDE.md; CURSOR
+zauberzeug/nicegui,3,AGENTS.md; CLAUDE.md; COPILOT
+risingwavelabs/risingwave,2,AGENTS.md; CLAUDE.md
+rabbitmq/rabbitmq-java-client,3,AGENTS.md; CLAUDE.md; GEMINI.md
+saulpw/visidata,2,AGENTS.md; CLAUDE.md
+ls1intum/artemis,2,AGENTS.md; CLAUDE.md
+trezor/trezor-suite,2,AGENTS.md; CLAUDE.md
+coder/coder,3,AGENTS.md; CLAUDE.md; CURSOR
+clickhouse/clickhouse-java,3,AGENTS.md; CLAUDE.md; COPILOT
+actualbudget/actual,2,AGENTS.md; CLAUDE.md
+sagemathinc/cocalc,2,AGENTS.md; CLAUDE.md
+tobymao/sqlglot,2,AGENTS.md; CLAUDE.md
+gofiber/fiber,2,AGENTS.md; COPILOT
+codenameone/codenameone,2,AGENTS.md; CLAUDE.md
+falconchristmas/fpp,2,CLAUDE.md; COPILOT
+kubeflow/trainer,3,AGENTS.md; CLAUDE.md; COPILOT
+go-git/go-git,2,AGENTS.md; COPILOT
+dolanmiu/docx,2,CLAUDE.md; COPILOT
+astral-sh/uv,2,AGENTS.md; CLAUDE.md
+amrex-codes/amrex,2,AGENTS.md; CLAUDE.md
+invoiceplane/invoiceplane,2,AGENTS.md; COPILOT
+automattic/simplenote-android,2,AGENTS.md; CLAUDE.md
+pyrevitlabs/pyRevit,3,AGENTS.md; CLAUDE.md; COPILOT
+ezengine/ezengine,2,CLAUDE.md; COPILOT
+tikv/pd,3,AGENTS.md; CLAUDE.md; COPILOT
+bytebase/bytebase,3,AGENTS.md; CLAUDE.md; GEMINI.md
+apache/pekko,2,AGENTS.md; CLAUDE.md
+rollbar/rollbar.js,2,AGENTS.md; CLAUDE.md
+pytorch/executorch,2,AGENTS.md; CLAUDE.md
+kotest/kotest,3,CLAUDE.md; COPILOT; CURSOR
+aiogram/aiogram,2,AGENTS.md; CLAUDE.md
+typestrong/ts-loader,2,AGENTS.md; CLAUDE.md
+online-go/online-go.com,2,AGENTS.md; CLAUDE.md
+open-telemetry/opentelemetry-python,2,AGENTS.md; CLAUDE.md
+skyscanner/backpack,2,AGENTS.md; CLAUDE.md
+getsentry/sentry-cocoa,2,AGENTS.md; CLAUDE.md
+NVIDIA/cccl,3,AGENTS.md; CLAUDE.md; COPILOT
+sveltejs/kit,3,AGENTS.md; CLAUDE.md; COPILOT
+walletconnect/web3modal,2,AGENTS.md; CLAUDE.md
+cloudflare/workers-sdk,2,AGENTS.md; CLAUDE.md
+paulwoitaschek/voice,2,CLAUDE.md; COPILOT
+timeplus-io/proton,2,AGENTS.md; COPILOT
+posthog/posthog-foss,3,AGENTS.md; CLAUDE.md; CURSOR
+git-town/git-town,2,AGENTS.md; CLAUDE.md
+microsoft/windowsprotocoltestsuites,2,CLAUDE.md; COPILOT
+quay/quay,3,AGENTS.md; CLAUDE.md; GEMINI.md
+belphemur/soundswitch,2,AGENTS.md; COPILOT
+tmux-python/tmuxp,2,AGENTS.md; CLAUDE.md
+oxc-project/oxc,3,AGENTS.md; CLAUDE.md; COPILOT
+digitallyinduced/ihp,2,AGENTS.md; CLAUDE.md
+sap/ui5-webcomponents,3,AGENTS.md; CLAUDE.md; COPILOT
+getsentry/sentry-cli,2,AGENTS.md; CLAUDE.md
+home-assistant/android,3,CLAUDE.md; COPILOT; GEMINI.md
+lfortran/lfortran,2,AGENTS.md; CLAUDE.md
+fzyzcjy/flutter_rust_bridge,2,AGENTS.md; CLAUDE.md
+poooi/poi,2,AGENTS.md; CLAUDE.md
+dooboolab-community/react-native-iap,3,AGENTS.md; CLAUDE.md; GEMINI.md
+openbao/openbao,2,AGENTS.md; CLAUDE.md
+home-assistant/supervisor,3,AGENTS.md; CLAUDE.md; COPILOT
+couchbase/couchbase-lite-ios,2,AGENTS.md; CLAUDE.md
+prairielearn/prairielearn,2,AGENTS.md; CLAUDE.md
+demarches-simplifiees/demarches-simplifiees.fr,2,AGENTS.md; CLAUDE.md
+couchbase/sync_gateway,4,AGENTS.md; CLAUDE.md; COPILOT; GEMINI.md
+owid/owid-grapher,3,AGENTS.md; CLAUDE.md; COPILOT
+ocaml-flambda/flambda-backend,2,AGENTS.md; CLAUDE.md
+usememos/memos,2,AGENTS.md; CLAUDE.md
+kubernetes-sigs/cluster-api-provider-aws,2,AGENTS.md; CLAUDE.md
+oliver006/redis_exporter,2,AGENTS.md; CLAUDE.md
+ledgerhq/ledger-live,3,AGENTS.md; CLAUDE.md; COPILOT
+cubrid/cubrid,2,AGENTS.md; CLAUDE.md
+danny-avila/LibreChat,2,AGENTS.md; CLAUDE.md
+flipt-io/flipt,2,AGENTS.md; CLAUDE.md
+aiidateam/aiida-core,2,AGENTS.md; CLAUDE.md
+livelykernel/lively4-core,2,CLAUDE.md; COPILOT
+huggingface/huggingface_hub,2,AGENTS.md; CLAUDE.md
+johnbillion/query-monitor,2,AGENTS.md; CLAUDE.md
+kubeovn/kube-ovn,2,AGENTS.md; CLAUDE.md
+umple/umple,2,AGENTS.md; CLAUDE.md
+ptitseb/box64,2,AGENTS.md; CLAUDE.md
+didi/mpx,2,AGENTS.md; CLAUDE.md
+splunk/splunk-sdk-python,2,AGENTS.md; CLAUDE.md
+microsoft/windowsappsdk,2,AGENTS.md; COPILOT
+catel/catel,2,AGENTS.md; CLAUDE.md
+onflow/flow-go,2,AGENTS.md; CLAUDE.md
+zigpy/zha-device-handlers,3,AGENTS.md; CLAUDE.md; COPILOT
+hashgraph/hedera-services,2,CLAUDE.md; COPILOT
+bluealloy/revm,2,AGENTS.md; CLAUDE.md
+pardeike/harmony,2,AGENTS.md; COPILOT
+mampfes/hacs_waste_collection_schedule,2,AGENTS.md; COPILOT
+reactiveui/akavache,2,CLAUDE.md; COPILOT
+software-mansion/react-native-screens,2,AGENTS.md; CLAUDE.md
+coil-kt/coil,3,AGENTS.md; CLAUDE.md; GEMINI.md
+esbmc/esbmc,3,AGENTS.md; CLAUDE.md; COPILOT
+celestiaorg/celestia-core,2,CLAUDE.md; COPILOT
+dadoonet/fscrawler,3,CLAUDE.md; COPILOT; CURSOR
+netz98/n98-magerun2,2,AGENTS.md; COPILOT
+backstage/backstage,2,AGENTS.md; COPILOT
+nitrojs/nitro,3,AGENTS.md; CLAUDE.md; COPILOT
+Jigsaw-Code/outline-apps,3,AGENTS.md; CLAUDE.md; GEMINI.md
+TouK/nussknacker,2,AGENTS.md; CLAUDE.md
+revenuecat/purchases-ios,2,AGENTS.md; CLAUDE.md
+sap/fundamental-ngx,4,AGENTS.md; CLAUDE.md; COPILOT; CURSOR
+chroma-core/chroma,2,AGENTS.md; CLAUDE.md
+lyft/cartography,2,AGENTS.md; CLAUDE.md
+lycheeorg/lychee,2,AGENTS.md; COPILOT
+mixpanel/mixpanel-android,3,AGENTS.md; CLAUDE.md; COPILOT
+marticliment/UniGetUI,2,AGENTS.md; CLAUDE.md
+confluentinc/cli,2,AGENTS.md; CLAUDE.md
+symfony/ux,2,AGENTS.md; CLAUDE.md
+rocketchat/rocket.chat.reactnative,2,AGENTS.md; CLAUDE.md
+doctoolchain/doctoolchain,2,CLAUDE.md; COPILOT
+spinnaker/spinnaker,3,AGENTS.md; CLAUDE.md; COPILOT
+apache/orc,2,AGENTS.md; CLAUDE.md
+yelp/tron,2,AGENTS.md; CLAUDE.md
+m-a-d-n-e-s-s/madness,2,AGENTS.md; CLAUDE.md
+churchcrm/crm,2,CLAUDE.md; COPILOT
+starkware-libs/cairo,2,AGENTS.md; CLAUDE.md
+shopsys/shopsys,2,AGENTS.md; CLAUDE.md
+go-graphite/go-carbon,2,AGENTS.md; CLAUDE.md
+haehnchen/idea-php-symfony2-plugin,2,AGENTS.md; CLAUDE.md
+ionide/FsAutoComplete,2,AGENTS.md; COPILOT
+home-assistant/ios,2,CLAUDE.md; COPILOT
+lablup/backend.ai,2,AGENTS.md; CLAUDE.md
+grafana/terraform-provider-grafana,2,AGENTS.md; CLAUDE.md
+udecode/plate,2,AGENTS.md; CLAUDE.md
+unjs/nitro,3,AGENTS.md; CLAUDE.md; COPILOT
+shopify/ruby-lsp,2,AGENTS.md; CLAUDE.md
+mozilla/bigquery-etl,2,AGENTS.md; CLAUDE.md
+prettier/prettier-vscode,2,CLAUDE.md; COPILOT
+conductor-oss/conductor,2,AGENTS.md; CLAUDE.md
+module-federation/core,3,AGENTS.md; CLAUDE.md; CURSOR
+goodrain/rainbond,2,AGENTS.md; CLAUDE.md
+ghostunnel/ghostunnel,2,AGENTS.md; CLAUDE.md
+automattic/woocommerce-payments,2,AGENTS.md; CLAUDE.md
+headlamp-k8s/headlamp,2,AGENTS.md; COPILOT
+microsoft/roosterjs,2,AGENTS.md; CLAUDE.md
+skypilot-org/skypilot,2,AGENTS.md; CLAUDE.md
+rust-bitcoin/rust-bitcoin,2,AGENTS.md; CLAUDE.md
+jdx/mise,2,AGENTS.md; CLAUDE.md
+heroui-inc/heroui,2,AGENTS.md; CLAUDE.md
+andbible/and-bible,3,AGENTS.md; CLAUDE.md; COPILOT
+open-telemetry/opentelemetry-python-contrib,2,AGENTS.md; CLAUDE.md
+garmeeh/next-seo,2,AGENTS.md; CLAUDE.md
+shokoanime/shokoserver,2,AGENTS.md; CLAUDE.md
+openshift/hive,2,AGENTS.md; CLAUDE.md
+ggml-org/llama.cpp,2,AGENTS.md; CLAUDE.md
+getsentry/sentry-dotnet,3,AGENTS.md; CLAUDE.md; COPILOT
+twin/gatus,2,AGENTS.md; COPILOT
+mainsail-crew/mainsail,3,AGENTS.md; CLAUDE.md; COPILOT
+seperman/deepdiff,2,AGENTS.md; CLAUDE.md
+eclipse-jkube/jkube,3,AGENTS.md; CLAUDE.md; COPILOT
+openshift/hypershift,3,AGENTS.md; CLAUDE.md; GEMINI.md
+openwpm/openwpm,2,AGENTS.md; CLAUDE.md
+ggerganov/llama.cpp,2,AGENTS.md; CLAUDE.md
+lucatume/wp-browser,2,AGENTS.md; CLAUDE.md
+pnpm/pnpm,2,AGENTS.md; CLAUDE.md
+dotnet/sqlclient,2,AGENTS.md; COPILOT
+knuckleswtf/scribe,2,AGENTS.md; COPILOT
+phidatahq/phidata,3,AGENTS.md; CLAUDE.md; CURSOR
+jaredwray/cacheable,2,AGENTS.md; CLAUDE.md
+frontio-ai/heroui,2,AGENTS.md; CLAUDE.md
+coreinfrastructure/best-practices-badge,2,AGENTS.md; CLAUDE.md
+mlrun/mlrun,2,AGENTS.md; CLAUDE.md
+cqframework/clinical_quality_language,2,AGENTS.md; CLAUDE.md
+microsoft/applicationinsights-java,2,AGENTS.md; COPILOT
+mirumee/ariadne,2,AGENTS.md; CLAUDE.md
+nextui-org/nextui,2,AGENTS.md; CLAUDE.md
+bunkerity/bunkerweb,3,AGENTS.md; CLAUDE.md; COPILOT
+rerun-io/rerun,2,AGENTS.md; CLAUDE.md
+ulauncher/ulauncher,2,AGENTS.md; CLAUDE.md
+pytorch/rl,2,AGENTS.md; CLAUDE.md
+onyx-dot-app/onyx,2,AGENTS.md; CLAUDE.md
+IntersectMBO/ouroboros-network,2,AGENTS.md; CLAUDE.md
+cdcseacave/openmvs,2,AGENTS.md; CLAUDE.md
+galette/galette,4,AGENTS.md; CLAUDE.md; COPILOT; CURSOR
+bioruby/bioruby,2,AGENTS.md; COPILOT
+thatguysam/doesitarm,2,AGENTS.md; CURSOR
+gnolang/gno,3,AGENTS.md; CLAUDE.md; COPILOT
+borntoberoot/networkmanager,2,AGENTS.md; CLAUDE.md
+lestrrat-go/jwx,2,AGENTS.md; CLAUDE.md
+galkahana/pdf-writer,2,CLAUDE.md; COPILOT
+abh/ntppool,2,CLAUDE.md; COPILOT
+metal3-io/baremetal-operator,2,AGENTS.md; CLAUDE.md
+catalyst-cooperative/pudl,2,AGENTS.md; CLAUDE.md
+roboflow/supervision,3,AGENTS.md; CLAUDE.md; COPILOT
+steedos/steedos-platform,2,COPILOT; CURSOR
+jihong88/suneditor,2,CLAUDE.md; GEMINI.md
+meltano/meltano,2,AGENTS.md; CLAUDE.md
+metamask/core,2,AGENTS.md; CLAUDE.md
+rancher/dashboard,3,AGENTS.md; CLAUDE.md; GEMINI.md
+matter-labs/foundry-zksync,2,AGENTS.md; CLAUDE.md
+go-vikunja/vikunja,2,AGENTS.md; CLAUDE.md
+juice-shop/juice-shop,2,AGENTS.md; COPILOT
+openluat/luatos,2,AGENTS.md; COPILOT
+amrex-astro/castro,2,AGENTS.md; CLAUDE.md
+azure/azure-container-networking,2,CLAUDE.md; COPILOT
+triggerdotdev/trigger.dev,3,AGENTS.md; CLAUDE.md; COPILOT
+domaframework/doma,2,AGENTS.md; CLAUDE.md
+langchain-ai/langgraph,2,AGENTS.md; CLAUDE.md
+firezone/firezone,2,CLAUDE.md; COPILOT

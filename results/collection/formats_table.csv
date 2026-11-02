@@ -1,0 +1,7 @@
+format,tool,files,pct
+AGENTS.md,Open standard,709,38.15931108719053
+CLAUDE.md,Claude Code,657,35.360602798708285
+copilot-instructions.md,GitHub Copilot,418,22.497308934337997
+GEMINI.md,Gemini CLI,42,2.2604951560818085
+.cursorrules,Cursor,32,1.7222820236813778
+Total,,1858,100.0
